@@ -53,3 +53,4 @@ C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlay
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.core.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.pdb
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.BroadcastPage.xaml.g.cs

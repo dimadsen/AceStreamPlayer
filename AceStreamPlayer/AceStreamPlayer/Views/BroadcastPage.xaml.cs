@@ -5,12 +5,15 @@ using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
-    public partial class LeaguePage : ContentPage
+    public partial class BroadcastPage : ContentPage
     {
-        public LeaguePage(List<Match> matches)
+        public BroadcastPage(List<Reference>references, Match match)
         {
             InitializeComponent();
-            BindingContext = new LeagueViewModel(matches) {Navigation = Navigation};
+            BindingContext = new BroadcastViewModel(references,match);
         }
+
+
+
     }
 }

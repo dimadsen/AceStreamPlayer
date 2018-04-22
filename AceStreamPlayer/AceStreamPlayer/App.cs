@@ -9,7 +9,7 @@ namespace AceStreamPlayer
 {
     public class App : Application
     {
-        private const string _databaseName = "AceStreamDB";
+        private const string _databaseName = "AceStreamDB.db";
         private static SQLiteConnection _db = null;
 
         public static SQLiteConnection DataBase

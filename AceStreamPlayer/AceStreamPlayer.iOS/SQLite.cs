@@ -13,6 +13,11 @@ namespace AceStreamPlayer.iOS
             string libraryPath = Path.Combine(documentsPath, "..", "Library"); // папка библиотеки
             var path = Path.Combine(libraryPath, sqliteFilename);
 
+            if (!File.Exists(path))
+            {
+                File.Copy(sqliteFilename, path);
+            }
+
             return path;
         }
     }

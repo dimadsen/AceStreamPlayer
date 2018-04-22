@@ -51,6 +51,10 @@
     </Compile>
     <Compile Include="ViewModels\LeagueViewModel.cs" />
     <Compile Include="ISQLite.cs" />
+    <Compile Include="ViewModels\BroadcastViewModel.cs" />
+    <Compile Include="Views\BroadcastPage.xaml.cs">
+      <DependentUpon>BroadcastPage.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -62,6 +66,10 @@
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\LeaguePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\BroadcastPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

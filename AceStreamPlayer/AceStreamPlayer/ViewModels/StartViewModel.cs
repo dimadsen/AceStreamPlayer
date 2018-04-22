@@ -10,10 +10,8 @@ namespace AceStreamPlayer
 {
     public class StartViewModel : BaseViewModel
     {
-
-        public INavigation Navigation { get; set; }
-
-        Championat selectedChampionat;
+        
+        private Championat selectedChampionat;
         public Championat SelectedChampionat
         {
             get { return selectedChampionat; }
@@ -28,27 +26,17 @@ namespace AceStreamPlayer
                 }
             }
         }
-        ObservableCollection<Championat> championats;
+        private ObservableCollection<Championat> championats;
         public ObservableCollection<Championat> Championats
         {
             get
             {
                 if (championats == null)
                 {
-                    List<Championat> champ = new List<Championat>()
-                    {
-                        new Championat()
-                        {
-                            Name = "Англия. Премьер-Лига",
-                            Tour = "32 тур",
-                        },
-                        new Championat()
-                        {
-                            Name = "Россия. Премьер-Лига",
-                            Tour = "26 тур"
-                        }
+                   
+                    List<Championat> champ  = App.DataBase.Table<Championat>().ToList(); 
 
-                    };
+
                     championats = new ObservableCollection<Championat>(champ);
                 }
                 return championats;
@@ -57,59 +45,13 @@ namespace AceStreamPlayer
             set { championats = value; }
         }
 
-        public void ShowMatches(Championat champ)
+        private void ShowMatches(Championat champ)
         {
-            List<Match> matches = new List<Match>();
-
-            switch (champ.Name)
-            {
-                case "Англия. Премьер-Лига":
-                    matches.AddRange(new List<Match>{
-                                new Match { Name = "Арсенал-Ливерпуль"}, new Match {Name = "Манчестер - Лестер"}
-                            });
-                    break;
-                case "Россия. Премьер-Лига":
-                    matches.AddRange(new List<Match>{
-                                new Match { Name = "Ска - Динамо"}, new Match {Name = "Рубин - Локомотив"}
-                            });
-                    break;
-            }
+            
+            var matches = App.DataBase.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
 
             Navigation.PushAsync(new LeaguePage(matches));
         }
-
-
-        //Command showMatches;
-
-        //public Command ShowCommand 
-        //{
-        //    get
-        //    {
-        //        return showMatches ?? (showMatches = new Command(obj =>
-        //     {
-        //         Championat champ = obj as Championat;
-
-        //         List<Match> matches = new List<Match>();
-
-        //         switch (champ.Name)
-        //         {
-        //             case "Англия. Премьер-Лига":
-        //                 matches.AddRange(new List<Match>{
-        //                        new Match { Name = "Арсенал-Ливерпуль"}, new Match {Name = "Манчестер - Лестер"}
-        //                    });
-        //                 break;
-        //             case "Россия. Премьер-Лига":
-        //                 matches.AddRange(new List<Match>{
-        //                        new Match { Name = "Ска - Динамо"}, new Match {Name = "Рубин - Локомотив"}
-        //                    });
-        //                 break;
-        //         }
-
-        //         Navigation.PushAsync(new LeaguePage(matches));
-
-        //     }));   
-        //    }
-        //}
 
     }
 

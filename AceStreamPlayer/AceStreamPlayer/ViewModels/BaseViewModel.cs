@@ -1,5 +1,5 @@
 ﻿using System.ComponentModel;
-
+using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
@@ -15,5 +15,7 @@ namespace AceStreamPlayer
                 handler.Invoke(this, new PropertyChangedEventArgs(propertyName));
             }
         }
+
+        public INavigation Navigation { get; set; }
     }
 }
