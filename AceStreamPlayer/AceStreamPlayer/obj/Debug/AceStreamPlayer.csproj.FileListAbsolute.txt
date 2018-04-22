@@ -1,32 +1,55 @@
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.dll
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.pdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Platform.dll
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.pdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Platform.pdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.pdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.xml
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.csprojResolveAssemblyReference.cache
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.Views.StartPage.xaml.g.cs
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.dll
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.pdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.dll.mdb
-C:\Users\svercosh\documents\visual studio 2015\Projects\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.dll.mdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.dll
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.pdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.dll
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Platform.dll
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.dll
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.pdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Core.xml
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Platform.pdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.pdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\Xamarin.Forms.Xaml.xml
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.csprojResolveAssemblyReference.cache
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.Views.StartPage.xaml.g.cs
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.dll
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.pdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\obj\Debug\AceStreamPlayer.dll.mdb
-C:\Users\svercosh\Documents\Visual Studio 2015\Projects\SourceTree\AceStreamPlayer\AceStreamPlayer\AceStreamPlayer\bin\Debug\AceStreamPlayer.dll.mdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.pdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.dll
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Platform.dll
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.dll
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.pdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.xml
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Platform.pdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.pdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.xml
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csprojResolveAssemblyReference.cache
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.StartPage.xaml.g.cs
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.pdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll.mdb
+C:/Users/svercosh/documents/visual studio 2015/Projects/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll.mdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.pdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.dll
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Platform.dll
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.dll
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.pdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.xml
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Platform.pdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.pdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.xml
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csprojResolveAssemblyReference.cache
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.StartPage.xaml.g.cs
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.pdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll.mdb
+C:/Users/svercosh/Documents/Visual Studio 2015/Projects/SourceTree/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll.mdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csprojResolveAssemblyReference.cache
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csproj.CoreCompileInputs.cache
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.StartPage.xaml.g.cs
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Platform.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.dll.mdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Core.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.dll.mdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Xamarin.Forms.Xaml.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.LeaguePage.xaml.g.cs
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.batteries_green.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.batteries_v2.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.core.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.xml

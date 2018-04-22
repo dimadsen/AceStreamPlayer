@@ -9,16 +9,15 @@
 //------------------------------------------------------------------------------
 
 namespace AceStreamPlayer {
-    using System;
-    using Xamarin.Forms;
-    using Xamarin.Forms.Xaml;
     
     
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/Views/StartPage.xam" +
+        "l")]
     public partial class StartPage : global::Xamarin.Forms.ContentPage {
         
-        [System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]
         private void InitializeComponent() {
-            this.LoadFromXaml(typeof(StartPage));
+            global::Xamarin.Forms.Xaml.Extensions.LoadFromXaml(this, typeof(StartPage));
         }
     }
 }

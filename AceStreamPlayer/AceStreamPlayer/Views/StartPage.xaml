@@ -1,22 +1,23 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+
              x:Class="AceStreamPlayer.StartPage">
 
-  <StackLayout>
-    <ListView  ItemsSource="{Binding Championats}">
-      <ListView.ItemTemplate>
+ 
+    <ListView  ItemsSource="{Binding Championats}" SelectedItem="{Binding Path = SelectedChampionat}"  HasUnevenRows="true" >
+  <ListView.ItemTemplate>
         <DataTemplate>
           <ViewCell>
-            <ViewCell.View>
+            
               <StackLayout>
-                <Label Text="{Binding Name}" FontSize="Medium" />
-                <Label Text="{Binding Tour}" FontSize="Small" />
+                <Label Text="{Binding Name}" FontSize="Medium"/>
               </StackLayout>
-            </ViewCell.View>
+            
           </ViewCell>
         </DataTemplate>
       </ListView.ItemTemplate>
     </ListView>
-  </StackLayout>
+ 
+    
 </ContentPage>

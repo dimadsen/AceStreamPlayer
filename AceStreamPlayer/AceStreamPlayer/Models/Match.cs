@@ -16,6 +16,8 @@ namespace AceStreamPlayer
         public string Stadium { get; set; }
         public string PictureHome { get; set; }
         public string PictureVisitors { get; set; }
+        public int ChampionatId { get; set; }
+        public Championat Championat { get; set; }
         public List<Reference> References { get; set; }
     }
 }

@@ -2,31 +2,27 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using SQLite;
 using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
     public class App : Application
     {
+        private const string _databaseName = "AceStreamDB";
+        private static SQLiteConnection _db = null;
+
+        public static SQLiteConnection DataBase
+        {
+            get
+            {
+                if (_db == null)
+                    _db = new SQLiteConnection(_databaseName);
+                return _db;
+            }
+        }
         public App()
         {
-            //// The root page of your application
-            //var content = new ContentPage
-            //{
-            //    Title = "AceStreamPlayer",
-            //    Content = new StackLayout
-            //    {
-            //        VerticalOptions = LayoutOptions.Center,
-            //        Children = {
-            //            new Label {
-            //                HorizontalTextAlignment = TextAlignment.Center,
-            //                Text = "Welcome to Xamarin Forms!"
-            //            }
-            //        }
-            //    }
-            //};
-
             MainPage = new NavigationPage(new StartPage());
         }
 
