@@ -50,7 +50,10 @@ namespace AceStreamPlayer
             
             var matches = App.DataBase.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
 
-            Navigation.PushAsync(new LeaguePage(matches));
+            Navigation.PushAsync(new LeaguePage(matches)
+            {
+                Title = champ.Name
+            });
         }
 
     }

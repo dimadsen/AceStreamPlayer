@@ -23,7 +23,7 @@ namespace AceStreamPlayer
         }
         public App()
         {
-            MainPage = new NavigationPage(new StartPage());
+            MainPage = new NavigationPage(new StartPage(){ Title = "Футбол. Выбор чемпионата"});
         }
 
         protected override void OnStart()

@@ -5,19 +5,14 @@
 <Label Text="{Binding Quality}" FontSize="Medium" />
     <Label Text="{Binding Channel}" FontSize="Medium" />
   </StackLayout>-->
-   <StackLayout>
-    <ListView  ItemsSource="{Binding References}"  HasUnevenRows="true">
-      <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            <ViewCell.View>
-              <StackLayout>
-                <Label Text="{Binding Name}" FontSize="Medium" />
-              </StackLayout>
-            </ViewCell.View>
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
-  </StackLayout>
+<!--   <StackLayout>
+        <Label Text="{Binding Path= Name}" FontSize="Medium"> </Label>
+    
+  </StackLayout>StackLayout-->
+
+    <StackLayout>
+            <Image Source="https://static.livesport.ws/images/logo/teams/england/arsenal.png">
+        
+    </Image>
+    </StackLayout>
 </ContentPage>
