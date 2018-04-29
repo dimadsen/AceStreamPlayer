@@ -10,9 +10,39 @@
     
   </StackLayout>StackLayout-->
 
-    <StackLayout>
-            <Image Source="https://static.livesport.ws/images/logo/teams/england/arsenal.png">
-        
-    </Image>
-    </StackLayout>
+<Grid>
+    <Grid.ColumnDefinitions>
+      <ColumnDefinition Width="*" />
+      <ColumnDefinition Width="*" />
+    </Grid.ColumnDefinitions>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="*" />
+      <RowDefinition Height="*" />
+    </Grid.RowDefinitions>
+    <Image Source="porto.png"  Grid.Column="0" Grid.Row="0" />
+    <Image Grid.Column="1" Grid.Row="0" Source="arsenal.png" ></Image>
+        <ScrollView  BackgroundColor="Lime" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="2"  >
+            <ListView ItemsSource ="{Binding References}" >
+                <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                                
+                              <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                              </Grid.ColumnDefinitions>
+                              <Image Source="{Binding Language}" Grid.Column="0"></Image>
+                              <Label Text="{Binding Channel}" Grid.Column="1"></Label>
+                              <Label Text="{Binding Quality}" Grid.Column="2"></Label> 
+                              <Button Text="Смотреть" Grid.Column="3"></Button>
+                            </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
+  </Grid> 
 </ContentPage>
