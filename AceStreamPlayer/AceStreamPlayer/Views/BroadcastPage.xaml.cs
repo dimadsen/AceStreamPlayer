@@ -14,6 +14,10 @@ namespace AceStreamPlayer
         }
 
 
+        public BroadcastPage()
+        {
+            InitializeComponent();
+        }
 
     }
 }

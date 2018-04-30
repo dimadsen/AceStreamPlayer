@@ -10,11 +10,13 @@ namespace AceStreamPlayer
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public string Hosts { get; set; }
+        public string Visitors { get; set; }
         public DateTime Date { get; set; }
         public string Score { get; set; }
         public string Time { get; set; }
         public string Stadium { get; set; }
-        public string PictureHome { get; set; }
+        public string PictureHosts { get; set; }
         public string PictureVisitors { get; set; }
         public int ChampionatId { get; set; }
         public Championat Championat { get; set; }

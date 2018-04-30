@@ -31,20 +31,62 @@ namespace AceStreamPlayer
 
 
 
-        public string Name
+        public string Hosts
         {
-            get { return _match.Name; }
+            get { return _match.Hosts; }
             set
             {
                 
-                if (_match.Name != value)
+                if (_match.Hosts != value)
                 {
-                    _match.Name = value;
-                    OnPropertyChanged("Name");
+                    _match.Hosts = value;
+                    OnPropertyChanged("Hosts");
                 }
                    
             }
         }
+
+        public string Visitors
+        {
+            get { return _match.Visitors; }
+            set
+            {
+                if(_match.Visitors != null)
+                {
+                    _match.Visitors = value;
+                    OnPropertyChanged("Visitors");
+                }
+
+            }
+        }
+
+        public string PictureHosts
+        {
+            get { return _match.PictureHosts; }
+            set
+            {
+                if (_match.PictureHosts != value)
+                {
+                    _match.PictureHosts = value;
+                    OnPropertyChanged("PictureHosts");
+                }
+            }
+        }
+
+        public string PictureVisitors
+        {
+            get { return _match.PictureVisitors; }
+            set
+            {
+                if (_match.PictureVisitors != value)
+                {
+                    _match.PictureVisitors = value;
+                    OnPropertyChanged("PictureVisitors");
+                }
+            }
+        }
+
+         
 
     }
 }
