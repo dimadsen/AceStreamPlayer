@@ -9,14 +9,16 @@
     <Grid.RowDefinitions>
       <RowDefinition Height="0.8*" />
       <RowDefinition Height="0.5*" />
-      <RowDefinition Height="2.7*"/>
+      <RowDefinition Height="0.7*"/>
+      <RowDefinition Height="2*"/>
     </Grid.RowDefinitions>
-    <BoxView Grid.Column="1" Grid.Row="0" BackgroundColor="Purple"/>
-    <Image Source="{Binding PictureHosts}"  Grid.Column="0" Grid.Row="0" HorizontalOptions="Fill"  />
-    <Image Grid.Column="2" Grid.Row="0" Source="{Binding PictureVisitors}" HorizontalOptions="Fill"></Image>
-    <Label Grid.Column="0" Grid.Row="1"  Text="{Binding Hosts}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment=" Center"/>
-     <Label Grid.Column="2" Grid.Row="1"  Text="{Binding Visitors}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment="Center"/>
-        <ScrollView  BackgroundColor="Lime" Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="3"  >
+    <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding PictureHosts}" HorizontalOptions="Fill"  />
+    <Label Grid.Column="0" Grid.Row="2" Text="{Binding Hosts}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment=" Center"/>
+    <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" Source="{Binding PictureVisitors}" HorizontalOptions="Fill"/>
+    <Label Grid.Column="1" Grid.Row="0" Text="{Binding Date , StringFormat='{0:dd MMMM yyyy HH:mm}'}" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="11"/>
+    <Label Grid.Column="1" Grid.Row="1" Text="{Binding Stadium}" FontAttributes="Italic" FontSize="11" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
+    <Label Grid.Column="2" Grid.Row="2"  Text="{Binding Visitors}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment="Center"/>
+        <ScrollView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3"  >
             <ListView ItemsSource ="{Binding References}" RowHeight="20" >
                 <ListView.ItemTemplate>
                 <DataTemplate>

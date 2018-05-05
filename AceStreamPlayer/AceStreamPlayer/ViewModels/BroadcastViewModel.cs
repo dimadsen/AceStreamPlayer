@@ -5,11 +5,11 @@ using System.Collections.ObjectModel;
 
 namespace AceStreamPlayer
 {
-    public class BroadcastViewModel:BaseViewModel
+    public class BroadcastViewModel : BaseViewModel
     {
         private Match _match;
 
-        public BroadcastViewModel(List<Reference>references, Match match)
+        public BroadcastViewModel(List<Reference> references, Match match)
         {
             References = new ObservableCollection<Reference>(references);
             this._match = match;
@@ -30,19 +30,20 @@ namespace AceStreamPlayer
         }
 
 
+#region Properties
 
         public string Hosts
         {
             get { return _match.Hosts; }
             set
             {
-                
+
                 if (_match.Hosts != value)
                 {
                     _match.Hosts = value;
                     OnPropertyChanged("Hosts");
                 }
-                   
+
             }
         }
 
@@ -51,7 +52,7 @@ namespace AceStreamPlayer
             get { return _match.Visitors; }
             set
             {
-                if(_match.Visitors != null)
+                if (_match.Visitors != null)
                 {
                     _match.Visitors = value;
                     OnPropertyChanged("Visitors");
@@ -86,7 +87,44 @@ namespace AceStreamPlayer
             }
         }
 
-         
+        public DateTime Date
+        {
+            get
+            {
+                return _match.Date;
+            }
+            set
+            {
+                if (_match.Date != value)
+                {
+                    _match.Date = value;
+
+                    OnPropertyChanged("Date");
+                }
+            }
+        }
+
+        public string Stadium
+        {
+            get
+            {
+                return $"Стадион: {_match.Stadium}";
+            }
+            set
+            {
+                if(_match.Stadium !=value)
+                {
+                    _match.Stadium = value;
+                    OnPropertyChanged("Stadium");
+                }
+
+            }
+        }
+
+
+
+#endregion
+
 
     }
 }

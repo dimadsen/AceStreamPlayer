@@ -50,7 +50,11 @@ namespace AceStreamPlayer
         {
             var references = App.DataBase.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
 
-            Navigation.PushAsync(new BroadcastPage(references,match));
+            Navigation.PushAsync(new BroadcastPage(references, match)
+            {
+                Title = "Трансляция матча"
+            });
+
         }
 
 

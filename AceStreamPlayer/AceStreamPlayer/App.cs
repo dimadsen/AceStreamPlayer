@@ -23,7 +23,12 @@ namespace AceStreamPlayer
         }
         public App()
         {
-            MainPage = new NavigationPage(new StartPage(){ Title = "Футбол. Выбор чемпионата"});
+            MainPage = new NavigationPage(new StartPage(){ Title = "Футбол. Выбор чемпионата"})
+            { 
+                //BarBackgroundColor = Color.Green,
+                Tint = Color.Green
+            };
+
         }
 
         protected override void OnStart()
