@@ -33,7 +33,7 @@
                               <Image Source="{Binding Language}" Grid.Column="0"   HeightRequest="5" WidthRequest="5"  ></Image>
                               <Label Text="{Binding Channel}" Grid.Column="1" HorizontalTextAlignment="Center" VerticalTextAlignment=" Start" FontSize="12" ></Label>
                               <Label Text="{Binding Quality}" Grid.Column="2"  HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="12" ></Label> 
-                              <Button Text="Смотреть" Grid.Column="3"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="11"></Button>
+                              <Button Text="Смотреть" Grid.Column="3"  HorizontalOptions="Center" VerticalOptions="Center" FontSize="11"  Command="{Binding WatchCommand}"></Button>
                             </Grid>
                     </ViewCell>
                 </DataTemplate>

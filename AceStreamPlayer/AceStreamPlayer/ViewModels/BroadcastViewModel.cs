@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Collections.ObjectModel;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
@@ -9,10 +11,12 @@ namespace AceStreamPlayer
     {
         private Match _match;
 
+        public ICommand WatchCommand;
         public BroadcastViewModel(List<Reference> references, Match match)
         {
             References = new ObservableCollection<Reference>(references);
             this._match = match;
+            WatchCommand = new Command(WatchMatch);
         }
 
         private ObservableCollection<Reference> references;
@@ -29,8 +33,12 @@ namespace AceStreamPlayer
             }
         }
 
+        private void WatchMatch()
+        {
+            Navigation.PushAsync(new VideoPage());
+        }
 
-#region Properties
+    #region Properties
 
         public string Hosts
         {

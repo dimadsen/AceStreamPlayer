@@ -36,11 +36,26 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="FormsVideoLibrary\FileVideoSource.cs" />
+    <Compile Include="FormsVideoLibrary\IVideoPicker.cs" />
+    <Compile Include="FormsVideoLibrary\IVideoPlayerController.cs" />
+    <Compile Include="FormsVideoLibrary\PositionSlider.cs" />
+    <Compile Include="FormsVideoLibrary\ResourceVideoSource.cs" />
+    <Compile Include="FormsVideoLibrary\UriVideoSource.cs" />
+    <Compile Include="FormsVideoLibrary\VideoInfo.cs" />
+    <Compile Include="FormsVideoLibrary\VideoPlayer.cs" />
+    <Compile Include="FormsVideoLibrary\VideoSource.cs" />
+    <Compile Include="FormsVideoLibrary\VideoSourceConverter.cs" />
+    <Compile Include="FormsVideoLibrary\VideoStatus.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\Championat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Sport.cs" />
     <Compile Include="Models\Reference.cs" />
+    <Compile Include="VideoPageViewModel.cs" />
+    <Compile Include="Views\VideoPage.xaml.cs">
+      <DependentUpon>VideoPage.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\StartPage.xaml.cs">
       <DependentUpon>StartPage.xaml</DependentUpon>
     </Compile>
@@ -59,7 +74,12 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Views\VideoPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\StartPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
