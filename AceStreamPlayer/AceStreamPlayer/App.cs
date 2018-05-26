@@ -18,6 +18,7 @@ namespace AceStreamPlayer
             {
                 if (_db == null)
                     _db = new SQLiteConnection(_databaseName);
+                
                 return _db;
             }
         }
@@ -25,8 +26,7 @@ namespace AceStreamPlayer
         {
             MainPage = new NavigationPage(new StartPage(){ Title = "Футбол. Выбор чемпионата"})
             { 
-                //BarBackgroundColor = Color.Green,
-                Tint = Color.Green
+                
             };
 
         }

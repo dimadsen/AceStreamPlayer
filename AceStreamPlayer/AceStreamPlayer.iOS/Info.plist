@@ -50,5 +50,11 @@
 	<string>LaunchScreen</string>
 	<key>CFBundleName</key>
 	<string>AceStreamPlayer</string>
+<key>NSAppTransportSecurity</key>
+<dict>
+  <key>NSAllowsArbitraryLoads</key>
+      <true/>
 </dict>
+</dict>
+
 </plist>
