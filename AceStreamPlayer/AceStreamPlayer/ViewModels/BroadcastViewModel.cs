@@ -32,7 +32,21 @@ namespace AceStreamPlayer
                 references = value;
             }
         }
+        private Reference selectedReference;
+        public Reference SelectedReference
+        {
+            get { return selectedReference; }
+            set
+            {
+                if (value != null)
+                {
+                    selectedReference = value;
 
+                    OnPropertyChanged("selectedReference");
+                    WatchMatch();
+                }
+            }
+        }
         private void WatchMatch()
         {
             Navigation.PushAsync(new VideoPage());
