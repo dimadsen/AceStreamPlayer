@@ -52,7 +52,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\Sport.cs" />
     <Compile Include="Models\Reference.cs" />
-    <Compile Include="VideoPageViewModel.cs" />
     <Compile Include="Views\VideoPage.xaml.cs">
       <DependentUpon>VideoPage.xaml</DependentUpon>
     </Compile>

@@ -1,6 +1,6 @@
 ﻿using FormsVideoLibrary;
 
-namespace VideoPlayerDemos
+namespace AceStreamPlayer
 {
     public class VideoInfo
     {
