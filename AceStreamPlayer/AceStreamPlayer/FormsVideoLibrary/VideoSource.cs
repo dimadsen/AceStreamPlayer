@@ -4,7 +4,7 @@ using Xamarin.Forms;
 namespace FormsVideoLibrary
 {
     [TypeConverter(typeof(VideoSourceConverter))]
-    public abstract class VideoSource : Element
+    public  class VideoSource : Element
     {
         public static VideoSource FromUri(string uri)
         {

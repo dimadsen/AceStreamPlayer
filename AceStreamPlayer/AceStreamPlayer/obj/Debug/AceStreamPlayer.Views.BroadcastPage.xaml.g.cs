@@ -11,8 +11,8 @@
 namespace AceStreamPlayer {
     
     
-    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("C:\\Users\\Lenovo\\Documents\\AceStreamPlayer\\AceStreamPlayer\\AceStreamPlayer\\Views\\B" +
-        "roadcastPage.xaml")]
+    [global::Xamarin.Forms.Xaml.XamlFilePathAttribute("/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/Views/BroadcastPage" +
+        ".xaml")]
     public partial class BroadcastPage : global::Xamarin.Forms.ContentPage {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Xamarin.Forms.Build.Tasks.XamlG", "0.0.0.0")]

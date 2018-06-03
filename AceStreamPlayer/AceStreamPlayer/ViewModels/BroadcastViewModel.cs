@@ -11,12 +11,13 @@ namespace AceStreamPlayer
     {
         private Match _match;
 
-        public ICommand WatchCommand;
+		public ICommand WatchCommand { get; set; } 
+
         public BroadcastViewModel(List<Reference> references, Match match)
         {
             References = new ObservableCollection<Reference>(references);
-            this._match = match;
-            WatchCommand = new Command(WatchMatch);
+            _match = match;
+
         }
 
         private ObservableCollection<Reference> references;
@@ -43,14 +44,15 @@ namespace AceStreamPlayer
                     selectedReference = value;
 
                     OnPropertyChanged("selectedReference");
-                    WatchMatch();
+					WatchMatch(selectedReference);
                 }
             }
         }
-        private void WatchMatch()
+		private async void WatchMatch(Reference reference)
         {
-            Navigation.PushAsync(new VideoPage());
+			await Navigation.PushAsync(new VideoPage(reference));
         }
+
 
     #region Properties
 

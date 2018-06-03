@@ -1,7 +1,9 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:video="clr-namespace:FormsVideoLibrary"
              x:Class="AceStreamPlayer.VideoPage">
-    <video:VideoPlayer Source="http://192.168.1.37:6878/ace/m/02e5142d7850b0aa2eeb30e1bb435f9c72e626a3/a1c891ed591150155e6a58944f11c89a.m3u8" />
+
+
+    <video:VideoPlayer    Source="fds"/>
 </ContentPage>

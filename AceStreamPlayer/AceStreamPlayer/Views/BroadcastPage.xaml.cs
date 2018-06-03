@@ -10,14 +10,11 @@ namespace AceStreamPlayer
         public BroadcastPage(List<Reference>references, Match match)
         {
             InitializeComponent();
-            BindingContext = new BroadcastViewModel(references,match);
-        }
-
-
-        public BroadcastPage()
-        {
-            InitializeComponent();
-        }
+			BindingContext = new BroadcastViewModel(references, match)
+			{
+				Navigation = Navigation
+			};
+        }                        
 
     }
 }

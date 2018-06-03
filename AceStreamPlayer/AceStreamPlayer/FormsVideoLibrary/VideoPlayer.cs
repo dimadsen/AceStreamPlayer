@@ -7,14 +7,17 @@ namespace FormsVideoLibrary
     {
         public event EventHandler UpdateStatus;
 
-        public VideoPlayer()
+		public VideoPlayer()
         {
+			
             Device.StartTimer(TimeSpan.FromMilliseconds(100), () =>
             {
                 UpdateStatus?.Invoke(this, EventArgs.Empty);
                 return true;
             });
         }
+
+		public string Url { get; set; }
 
         // AreTransportControlsEnabled property
         public static readonly BindableProperty AreTransportControlsEnabledProperty =
@@ -26,15 +29,16 @@ namespace FormsVideoLibrary
             get { return (bool)GetValue(AreTransportControlsEnabledProperty); }
         }
 
-        // Source property
-        public static readonly BindableProperty SourceProperty =
-            BindableProperty.Create(nameof(Source), typeof(VideoSource), typeof(VideoPlayer), null);
+        //Source property
+		public static readonly BindableProperty SourceProperty =
+			BindableProperty.Create(nameof(Source), typeof(VideoSource), typeof(VideoPlayer), null);
 
         [TypeConverter(typeof(VideoSourceConverter))]
         public VideoSource Source
         {
             set { SetValue(SourceProperty, value); }
             get { return (VideoSource)GetValue(SourceProperty); }
+		
         }
 
         // AutoPlay property
