@@ -6,10 +6,11 @@ namespace FormsVideoLibrary
     public class VideoPlayer : View, IVideoPlayerController
     {
         public event EventHandler UpdateStatus;
-
+		private string url;
 		public VideoPlayer()
         {
-			
+			url = "assd";
+			BindingContext = this;
             Device.StartTimer(TimeSpan.FromMilliseconds(100), () =>
             {
                 UpdateStatus?.Invoke(this, EventArgs.Empty);
@@ -17,7 +18,14 @@ namespace FormsVideoLibrary
             });
         }
 
-		public string Url { get; set; }
+        [TypeConverter(typeof(VideoSourceConverter))]
+		public string Url
+		{
+			get { return url; }
+			set {
+				url = value;
+				OnPropertyChanged("Url");}
+		}
 
         // AreTransportControlsEnabled property
         public static readonly BindableProperty AreTransportControlsEnabledProperty =

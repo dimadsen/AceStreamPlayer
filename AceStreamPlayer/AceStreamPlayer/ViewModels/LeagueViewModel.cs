@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using AceStreamPlayer;
 using Xamarin.Forms;
+using Xamarin.Forms.Internals;
 
 namespace AceStreamPlayer
 {
@@ -12,8 +13,7 @@ namespace AceStreamPlayer
         
         public LeagueViewModel(List<Match> matches)
         {
-            Matches = new ObservableCollection<Match>(matches);
-
+			Matches = new ObservableCollection<Match>(SetNameAndTime(matches));
         }
 
 
@@ -46,7 +46,23 @@ namespace AceStreamPlayer
             }
         }
 
-        private void ShowReferences(Match match)
+
+		private List<Match> SetNameAndTime(List<Match> matches)
+		{
+			matches.ForEach(m =>
+			{
+				m.Name = $"{m.Hosts} - {m.Visitors}";
+
+				if (m.Status =="Live")
+					m.Time = "LIVE";
+				else
+					m.Time = $"Начало в {DateTime.Parse(m.Date).TimeOfDay.Hours}:{DateTime.Parse(m.Date).TimeOfDay.Minutes}";
+			});
+
+			return matches.Where(m=>m.Status!= "Завершён").ToList();
+		}
+
+		private void ShowReferences(Match match)
         {
             var references = App.DataBase.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
 

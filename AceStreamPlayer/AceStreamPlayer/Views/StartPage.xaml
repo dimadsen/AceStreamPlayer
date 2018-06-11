@@ -3,21 +3,21 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 
              x:Class="AceStreamPlayer.StartPage">
-
- 
-    <ListView  ItemsSource="{Binding Championats}" SelectedItem="{Binding Path = SelectedChampionat}"  HasUnevenRows="true" >
-  <ListView.ItemTemplate>
-        <DataTemplate>
-          <ViewCell>
-            
-              <StackLayout>
-                <Label Text="{Binding Name}" FontSize="Medium"/>
-              </StackLayout>
-            
-          </ViewCell>
-        </DataTemplate>
-      </ListView.ItemTemplate>
-    </ListView>
- 
-    
+    <StackLayout>
+        <ListView x:Name="championats"  SeparatorVisibility="None" 
+              HasUnevenRows="true" SelectedItem="{Binding Path = SelectedChampionat}"
+              ItemsSource="{Binding Championats}" >
+            <ListView.ItemTemplate >
+                <DataTemplate >
+                    <ImageCell  
+                        ImageSource="{Binding Picture}"
+                        Text="{Binding Name}"
+                        Detail="{Binding Tour}"
+                        TextColor=" Navy"
+                        DetailColor="Gray"
+                        />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

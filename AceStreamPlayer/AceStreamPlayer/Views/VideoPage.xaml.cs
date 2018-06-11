@@ -9,13 +9,17 @@ using Xamarin.Forms.Xaml;
 
 namespace AceStreamPlayer
 {
-    //[XamlCompilation(XamlCompilationOptions.Compile)]
+    [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class VideoPage : ContentPage
     {
 		public VideoPage(Reference reference)
         {
-			
-			InitializeComponent();
+
+			//BindingContext = this;
+			InitializeComponent( );
+			//BindingContext = new VideoViewModel(reference) { Navigation = Navigation };
+			//Content.BindingContext = this;
+
 
 
 

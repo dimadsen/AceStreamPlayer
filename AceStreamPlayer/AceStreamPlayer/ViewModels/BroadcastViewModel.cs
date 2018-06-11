@@ -111,11 +111,11 @@ namespace AceStreamPlayer
             }
         }
 
-        public DateTime Date
+		public string Date
         {
             get
             {
-                return _match.Date;
+				return string.Format("{0:f}",DateTime.Parse( _match.Date));
             }
             set
             {
