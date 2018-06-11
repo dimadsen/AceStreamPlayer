@@ -1,38 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Collections.ObjectModel;
-using System.Windows.Input;
-using Xamarin.Forms;
-
 namespace AceStreamPlayer
 {
     public class BroadcastViewModel : BaseViewModel
     {
         private Match _match;
 
-		public ICommand WatchCommand { get; set; } 
-
         public BroadcastViewModel(List<Reference> references, Match match)
         {
             References = new ObservableCollection<Reference>(references);
             _match = match;
-
         }
 
-        private ObservableCollection<Reference> references;
+        public ObservableCollection<Reference> References { get; set; }
 
-        public ObservableCollection<Reference> References
-        {
-            get
-            {
-                return references;
-            }
-            set
-            {
-                references = value;
-            }
-        }
         private Reference selectedReference;
         public Reference SelectedReference
         {
@@ -44,17 +26,17 @@ namespace AceStreamPlayer
                     selectedReference = value;
 
                     OnPropertyChanged("selectedReference");
-					WatchMatch(selectedReference);
+                    WatchMatch(selectedReference);
                 }
             }
         }
-		private async void WatchMatch(Reference reference)
+        private async void WatchMatch(Reference reference)
         {
-			await Navigation.PushAsync(new VideoPage(reference));
+            await Navigation.PushAsync(new VideoPage(reference));
         }
 
 
-    #region Properties
+        #region Properties
 
         public string Hosts
         {
@@ -111,11 +93,11 @@ namespace AceStreamPlayer
             }
         }
 
-		public string Date
+        public string Date
         {
             get
             {
-				return string.Format("{0:f}",DateTime.Parse( _match.Date));
+                return string.Format("{0:f}", DateTime.Parse(_match.Date));
             }
             set
             {
@@ -136,7 +118,7 @@ namespace AceStreamPlayer
             }
             set
             {
-                if(_match.Stadium !=value)
+                if (_match.Stadium != value)
                 {
                     _match.Stadium = value;
                     OnPropertyChanged("Stadium");
@@ -147,7 +129,7 @@ namespace AceStreamPlayer
 
 
 
-#endregion
+        #endregion
 
 
     }

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
 using Xamarin.Forms;
 
 namespace AceStreamPlayer
@@ -10,7 +8,10 @@ namespace AceStreamPlayer
         public LeaguePage(List<Match> matches)
         {
             InitializeComponent();
-            BindingContext = new LeagueViewModel(matches) {Navigation = Navigation};
+            BindingContext = new LeagueViewModel(matches)
+            {
+                Navigation = Navigation
+            };
         }
     }
 }

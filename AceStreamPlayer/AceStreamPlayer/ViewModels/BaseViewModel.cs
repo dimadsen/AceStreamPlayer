@@ -3,7 +3,7 @@ using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
-    public abstract class BaseViewModel: INotifyPropertyChanged
+    public abstract class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 

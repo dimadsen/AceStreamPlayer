@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using SQLite;
+﻿using SQLite;
 using Xamarin.Forms;
 
 namespace AceStreamPlayer
@@ -18,16 +14,15 @@ namespace AceStreamPlayer
             {
                 if (_db == null)
                     _db = new SQLiteConnection(_databaseName);
-                
+
                 return _db;
             }
         }
         public App()
         {
-			MainPage = new NavigationPage(new StartPage(){ Title = "Футбол. Выбор чемпионата" })
-            { 
-				BarBackgroundColor = Color.MediumSeaGreen,
-
+            MainPage = new NavigationPage(new StartPage() { Title = "Футбол. Выбор чемпионата" })
+            {
+                BarBackgroundColor = Color.MediumSeaGreen
             };
 
         }

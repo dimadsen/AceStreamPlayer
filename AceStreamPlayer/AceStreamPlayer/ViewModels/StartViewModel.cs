@@ -10,14 +10,13 @@ namespace AceStreamPlayer
 {
     public class StartViewModel : BaseViewModel
     {
-        
         private Championat selectedChampionat;
         public Championat SelectedChampionat
         {
             get { return selectedChampionat; }
             set
             {
-                if(value !=null)
+                if (value != null)
                 {
                     selectedChampionat = value;
 
@@ -33,10 +32,7 @@ namespace AceStreamPlayer
             {
                 if (championats == null)
                 {
-                   
-                    List<Championat> champ  = App.DataBase.Table<Championat>().ToList(); 
-
-
+                    List<Championat> champ = App.DataBase.Table<Championat>().ToList();
                     championats = new ObservableCollection<Championat>(champ);
                 }
                 return championats;
@@ -47,9 +43,7 @@ namespace AceStreamPlayer
 
         private void ShowMatches(Championat champ)
         {
-            
             var matches = App.DataBase.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
-
 
             Navigation.PushAsync(new LeaguePage(matches)
             {
@@ -61,4 +55,4 @@ namespace AceStreamPlayer
 
 }
 
- 
+
