@@ -41,13 +41,13 @@ namespace AceStreamPlayer
                 response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
 
                 var content = await response.Content.ReadAsStringAsync();
-                var json = JObject.Parse(content);
-                var j = json.SelectToken(@"$.response");
-                var url = JsonConvert.DeserializeObject<Response>(j.ToString());
+				var json = JObject.Parse(content).SelectToken(@"$.response");
+
+                var url = JsonConvert.DeserializeObject<Response>(json.ToString());
 
                 return url;
             }
-            catch
+			catch(Exception ex)
             {
                 return null;
             }

@@ -33,14 +33,21 @@ namespace AceStreamPlayer
 
         private List<Match> SetNameAndTime(List<Match> matches)
         {
+			DateTime date;
+			string minute;
             matches.ForEach(m =>
             {
                 m.Name = $"{m.Hosts} - {m.Visitors}";
-
+                
                 if (m.Status == "Live")
                     m.Time = "LIVE";
                 else
-                    m.Time = $"Начало в {DateTime.Parse(m.Date).TimeOfDay.Hours}:{DateTime.Parse(m.Date).TimeOfDay.Minutes}";
+				{
+					date = DateTime.Parse(m.Date);
+					minute = date.Minute == 0 ? minute = "00" : date.Minute.ToString();
+					m.Time = $"Начало в {date.Hour}:{minute}";
+				}
+					
             });
 
             return matches.Where(m => m.Status != "Завершён").ToList();
