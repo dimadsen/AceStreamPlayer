@@ -10,6 +10,7 @@ namespace AceStreamPlayer
 {
     public class StartViewModel : BaseViewModel
     {
+
         private Championat selectedChampionat;
         public Championat SelectedChampionat
         {
@@ -19,9 +20,10 @@ namespace AceStreamPlayer
                 if (value != null)
                 {
                     selectedChampionat = value;
-
+                    
                     OnPropertyChanged("selectedChampionat");
                     ShowMatches(selectedChampionat);
+
                 }
             }
         }
@@ -49,6 +51,7 @@ namespace AceStreamPlayer
             {
                 Title = champ.Name,
             });
+
         }
 
     }

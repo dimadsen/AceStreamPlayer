@@ -84,3 +84,6 @@ C:/Users/Lenovo/Documents/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/De
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.BroadcastPage.xaml.g.cs
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csprojResolveAssemblyReference.cache

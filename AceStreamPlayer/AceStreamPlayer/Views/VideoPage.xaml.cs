@@ -14,15 +14,11 @@ namespace AceStreamPlayer
     {
 		public VideoPage(Reference reference)
         {
-
-			//BindingContext = this;
 			InitializeComponent( );
-			//BindingContext = new VideoViewModel(reference) { Navigation = Navigation };
-			//Content.BindingContext = this;
-
-
-
-
+			BindingContext = new VideoViewModel(reference,videoPlayer)
+			{
+				Navigation = Navigation
+			};
             
         }
     }

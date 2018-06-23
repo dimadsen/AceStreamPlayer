@@ -4,7 +4,7 @@
              x:Class="AceStreamPlayer.StartPage">
     <StackLayout>
         <ListView x:Name="championats"  SeparatorVisibility="None" 
-              HasUnevenRows="true" SelectedItem="{Binding Path = SelectedChampionat}"
+              HasUnevenRows="true" SelectedItem="{Binding Path = SelectedChampionat }" 
               ItemsSource="{Binding Championats}" >
             <ListView.ItemTemplate>
                 <DataTemplate >

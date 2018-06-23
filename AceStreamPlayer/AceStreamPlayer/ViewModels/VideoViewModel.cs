@@ -1,37 +1,54 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
+using System.Net.Http;
+using System.Threading.Tasks;
+using FormsVideoLibrary;
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Xamarin.Forms.Internals;
+
 namespace AceStreamPlayer
 {
 	public class VideoViewModel : BaseViewModel
     {
-		private Reference _reference;
-
-		public VideoViewModel(Reference reference)
+		
+		public VideoViewModel(Reference reference, VideoPlayer videoPlayer)
         {
-			_reference = reference;
-			Url = "http://192.168.1.37:6878/hls/r/adbab9853095691096a6e4faa0aec963c3d19e82/189e5d61a3b7bc4fb60b796671d439ef.m3u8";
+			WatchMatch(videoPlayer, reference);
         }
+  
 
-        
-        public string Url
+		private async void WatchMatch(VideoPlayer player, Reference reference)
 		{
-			get
+			 var url =  await GetUrl(reference.ContentId);
+		    player.Source = new UriVideoSource()
 			{
-				_reference.ContentId = "http://192.168.1.37:6878/hls/r/adbab9853095691096a6e4faa0aec963c3d19e82/189e5d61a3b7bc4fb60b796671d439ef.m3u8";
-				return _reference.ContentId;
-			}
-			set
-			{
-				//if (_reference.ContentId != value)
-				//           {
-				//_reference.ContentId = value;
-				//OnPropertyChanged("Url");
-				//}
-				value = "http://192.168.1.37:6878/hls/r/adbab9853095691096a6e4faa0aec963c3d19e82/189e5d61a3b7bc4fb60b796671d439ef.m3u8";
-									_reference.ContentId = "http://192.168.1.37:6878/hls/r/adbab9853095691096a6e4faa0aec963c3d19e82/189e5d61a3b7bc4fb60b796671d439ef.m3u8";
-				OnPropertyChanged("Url");
-			}
+				Uri = url?.playback_url
+			};
 		}
+        
+		private  async Task<Response>  GetUrl(string contentId)
+		{
+			string url = $"http://192.168.1.37:6878/ace/manifest.m3u8?format=json&id={contentId}";
 
+            HttpClient client = new HttpClient();
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0");
+
+            client.BaseAddress = new Uri(url);
+
+			var response = await client.GetAsync(new Uri(url));
+            response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
+
+			var content = await response.Content.ReadAsStringAsync();
+            JObject json = JObject.Parse(content);
+            var j = json.SelectToken(@"$.response");
+			var ace = JsonConvert.DeserializeObject<Response>(j.ToString());
+
+			return ace;
+
+		}
 
 
     }

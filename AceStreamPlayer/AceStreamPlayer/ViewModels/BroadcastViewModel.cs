@@ -1,16 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using Xamarin.Forms;
+
 namespace AceStreamPlayer
 {
     public class BroadcastViewModel : BaseViewModel
     {
         private Match _match;
+		private List<Reference> _references;
 
         public BroadcastViewModel(List<Reference> references, Match match)
         {
             References = new ObservableCollection<Reference>(references);
             _match = match;
+			_references = references;
         }
 
         public ObservableCollection<Reference> References { get; set; }
@@ -30,9 +34,9 @@ namespace AceStreamPlayer
                 }
             }
         }
-        private async void WatchMatch(Reference reference)
+		private  void WatchMatch(Reference reference)
         {
-            await Navigation.PushAsync(new VideoPage(reference));
+			Navigation.PushAsync(new VideoPage(reference));
         }
 
 

@@ -1,5 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <MinimumVisualStudioVersion>11.0</MinimumVisualStudioVersion>
@@ -14,8 +13,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <TargetFrameworkProfile>Profile259</TargetFrameworkProfile>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <NuGetPackageImportStamp>
-    </NuGetPackageImportStamp>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -41,12 +39,12 @@
     <Compile Include="FormsVideoLibrary\IVideoPlayerController.cs" />
     <Compile Include="FormsVideoLibrary\PositionSlider.cs" />
     <Compile Include="FormsVideoLibrary\ResourceVideoSource.cs" />
+    <Compile Include="FormsVideoLibrary\VideoStatus.cs" />
     <Compile Include="FormsVideoLibrary\UriVideoSource.cs" />
     <Compile Include="FormsVideoLibrary\VideoInfo.cs" />
     <Compile Include="FormsVideoLibrary\VideoPlayer.cs" />
     <Compile Include="FormsVideoLibrary\VideoSource.cs" />
     <Compile Include="FormsVideoLibrary\VideoSourceConverter.cs" />
-    <Compile Include="FormsVideoLibrary\VideoStatus.cs" />
     <Compile Include="Models\Match.cs" />
     <Compile Include="Models\Championat.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -70,6 +68,7 @@
       <DependentUpon>BroadcastPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\VideoViewModel.cs" />
+    <Compile Include="Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -124,6 +123,9 @@
     </Reference>
     <Reference Include="System.Net.Http.Primitives">
       <HintPath>..\..\packages\Microsoft.Net.Http.2.2.29\lib\portable-net40+sl4+win8+wp71+wpa81\System.Net.Http.Primitives.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\..\packages\Newtonsoft.Json.11.0.2\lib\portable-net45+win8+wp8+wpa81\Newtonsoft.Json.dll</HintPath>
     </Reference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
