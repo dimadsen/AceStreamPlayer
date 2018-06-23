@@ -5,7 +5,7 @@
     <StackLayout>
         <ListView x:Name="championats"  SeparatorVisibility="None" 
               HasUnevenRows="true" SelectedItem="{Binding Path = SelectedChampionat }" 
-              ItemsSource="{Binding Championats}" >
+              ItemsSource="{Binding Championats}" RefreshCommand="{Binding re}" IsRefreshing="false">
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <ImageCell  
