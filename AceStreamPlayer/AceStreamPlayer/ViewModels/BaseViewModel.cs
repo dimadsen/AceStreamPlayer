@@ -1,5 +1,7 @@
 ﻿using System;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 using Newtonsoft.Json;
@@ -10,8 +12,9 @@ namespace AceStreamPlayer
 {
 	public abstract class BaseViewModel : INotifyPropertyChanged
 	{
+		#region INotifyPropertyChanged
 		public event PropertyChangedEventHandler PropertyChanged;
-		public INavigation Navigation { get; set; }
+
 
 		protected virtual void OnPropertyChanged(string propertyName)
 		{
@@ -22,6 +25,9 @@ namespace AceStreamPlayer
 			}
 		}
 
+		#endregion
+
+		#region Methods
 		protected async Task<T> GetUrl<T>(string uri)
 		{
 			try
@@ -48,5 +54,50 @@ namespace AceStreamPlayer
 			}
 		}
 
+		protected ObservableCollection<T> GetCollection<T>() where T : new()
+		{
+			var list = App.DataBase.Table<T>().ToList();
+			var collection = new ObservableCollection<T>(list);
+
+			return collection;
+		}
+
+		#endregion
+
+		#region Properties
+
+		protected bool _isBusy;
+		public bool IsBusy
+		{
+			get { return _isBusy; }
+			set
+			{
+				_isBusy = value;
+				OnPropertyChanged(nameof(IsBusy));
+			}
+		}  		protected bool _isRefreshing;
+		public bool IsRefreshing
+		{
+			get { return _isRefreshing; }
+			set
+			{
+				_isRefreshing = value;
+				OnPropertyChanged(nameof(IsRefreshing));
+			}
+		}
+
+		public INavigation Navigation { get; set; }
+
+		#endregion 
+		#region Commands
+		protected Command _refreshCommand;
+		public Command RefreshCommand
+		{
+			get
+			{
+				return _refreshCommand;
+			}
+		}
+		#endregion
 	}
 }
