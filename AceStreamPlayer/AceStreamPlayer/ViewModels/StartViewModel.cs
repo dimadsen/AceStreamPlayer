@@ -12,7 +12,7 @@ namespace AceStreamPlayer
 	{
 		public StartViewModel()
 		{
-			_refreshCommand = new Command(() => RefreshList());
+			_refreshCommand = new Command(async() => await RefreshList());
 
 
 			IsBusy = true;
@@ -64,9 +64,10 @@ namespace AceStreamPlayer
 
 		}
 
-		private void RefreshList()
+		private async Task RefreshList()
 		{
 			IsRefreshing = true;
+			await GetIdUrl();
 			Championats = GetCollection<Championat>();
 			IsRefreshing = false;
 		}

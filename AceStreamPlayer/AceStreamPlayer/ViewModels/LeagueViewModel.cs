@@ -6,64 +6,60 @@ using Xamarin.Forms.Internals;
 
 namespace AceStreamPlayer
 {
-    public class LeagueViewModel : BaseViewModel
-    {
-        public LeagueViewModel(List<Match> matches)
-        {
-            Matches = new ObservableCollection<Match>(SetNameAndTime(matches));
-        }
-        public ObservableCollection<Match> Matches { get; set; }
+	public class LeagueViewModel : BaseViewModel
+	{
+		public LeagueViewModel(List<Match> matches)
+		{
+			Matches = new ObservableCollection<Match>(SetNameAndTime(matches));
+		}
 
-        private Match selectedMatch;
-        public Match SelectedMatch
-        {
-            get { return selectedMatch; }
-            set
-            {
-                if (value != null)
-                {
-                    selectedMatch = value;
+		public ObservableCollection<Match> Matches { get; set; }
 
-                    OnPropertyChanged("selectedMatch");
-                    ShowReferences(selectedMatch);
-                }
-            }
-        }
-
-
-        private List<Match> SetNameAndTime(List<Match> matches)
-        {
-			DateTime date;
-			string minute;
-            matches.ForEach(m =>
-            {
-                m.Name = $"{m.Hosts} - {m.Visitors}";
-                
-                if (m.Status == "Live")
-                    m.Time = "LIVE";
-                else
+		private Match selectedMatch;
+		public Match SelectedMatch
+		{
+			get { return selectedMatch; }
+			set
+			{
+				if (value != null)
 				{
-					date = DateTime.Parse(m.Date);
-					minute = date.Minute == 0 ? minute = "00" : date.Minute.ToString();
-					m.Time = $"Начало в {date.Hour}:{minute}";
+					selectedMatch = value;
+
+					OnPropertyChanged("selectedMatch");
+					ShowReferences(selectedMatch);
 				}
-					
-            });
-
-            return matches.Where(m => m.Status != "Завершён").ToList();
-        }
-
-        private void ShowReferences(Match match)
-        {
-            var references = App.DataBase.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
-
-            Navigation.PushAsync(new BroadcastPage(references, match)
-            {
-                Title = "Трансляция матча"
-            });
-
-        }
+			}
+		}
 
 
-    }
+		private List<Match> SetNameAndTime(List<Match> matches)
+		{
+			foreach (var match in matches)
+			{
+				match.Name = $"{match.Hosts} - {match.Visitors}";
+				if (match.Status == "Live")
+					match.Time = "LIVE";
+				else
+				{
+					var date = DateTime.Parse(match.Date);
+					var minute = date.Minute == 0 ? "00" : date.Minute.ToString();
+					match.Time = $"Начало в {date.Hour}:{minute}";
+				}
+			}
+			return matches.Where(m => m.Status != "Завершён").ToList();
+		}
+
+		private void ShowReferences(Match match)
+		{
+			var references = App.DataBase.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
+
+			Navigation.PushAsync(new BroadcastPage(references, match)
+			{
+				Title = "Трансляция матча"
+			});
+
+		}
+
+
+	}
 }
