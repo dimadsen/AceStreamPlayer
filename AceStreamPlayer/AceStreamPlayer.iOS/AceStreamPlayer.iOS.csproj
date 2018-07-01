@@ -119,6 +119,11 @@
     <BundleResource Include="Resources\mexico.png" />
     <BundleResource Include="Resources\poland.png" />
     <BundleResource Include="Resources\sweden.png" />
+    <BundleResource Include="Resources\LaunchImage-568h%402x.png" />
+    <BundleResource Include="Resources\LaunchImage-Portrait%402x~ipad.png" />
+    <BundleResource Include="Resources\LaunchImage-Portrait~ipad.png" />
+    <BundleResource Include="Resources\LaunchImage.png" />
+    <BundleResource Include="Resources\LaunchImage%402x.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%403x.png" />

@@ -12,12 +12,12 @@ namespace AceStreamPlayer
 	{
 		public StartViewModel()
 		{
-			_refreshCommand = new Command(async() => await RefreshList());
-
-
-			IsBusy = true;
-			Championats = GetCollection<Championat>();
-			IsBusy = false;
+			_refreshCommand = new Command(() =>
+		   {
+			   IsBusy = true;
+			   Championats = RefreshList();
+			   IsBusy = false;
+		   });
 
 		}
 
@@ -45,7 +45,7 @@ namespace AceStreamPlayer
 			{
 				if (championats == null)
 				{
-					championats = GetCollection<Championat>();
+					championats = DataBase.GetCollection<Championat>();
 				}
 				return championats;
 			}
@@ -55,7 +55,7 @@ namespace AceStreamPlayer
 
 		private void ShowMatches(Championat champ)
 		{
-			var matches = App.DataBase.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
+			var matches = DataBase.Sql.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
 
 			Navigation.PushAsync(new LeaguePage(matches)
 			{
@@ -64,13 +64,14 @@ namespace AceStreamPlayer
 
 		}
 
-		private async Task RefreshList()
+		private ObservableCollection<Championat> RefreshList()
 		{
 			IsRefreshing = true;
-			await GetIdUrl();
-			Championats = GetCollection<Championat>();
+			Worker.Start(Worker.GetUrls());
 			IsRefreshing = false;
+			return DataBase.GetCollection<Championat>();
 		}
+
 
 
 	}

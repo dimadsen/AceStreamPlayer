@@ -37,7 +37,7 @@ namespace AceStreamPlayer
 			foreach (var match in matches)
 			{
 				match.Name = $"{match.Hosts} - {match.Visitors}";
-				if (match.Status == "Live")
+				if (match.Status == "LIVE")
 					match.Time = "LIVE";
 				else
 				{
@@ -51,7 +51,7 @@ namespace AceStreamPlayer
 
 		private void ShowReferences(Match match)
 		{
-			var references = App.DataBase.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
+			var references = DataBase.Sql.Table<Reference>().Where(m => m.MatchId == match.Id).ToList();
 
 			Navigation.PushAsync(new BroadcastPage(references, match)
 			{

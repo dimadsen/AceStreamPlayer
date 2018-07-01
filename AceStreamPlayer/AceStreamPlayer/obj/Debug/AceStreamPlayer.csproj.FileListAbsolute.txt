@@ -56,6 +56,8 @@ C:/Users/Lenovo/Documents/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/De
 C:/Users/Lenovo/Documents/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.VideoPage.xaml.g.cs
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AceStreamPlayer.pdb
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AngleSharp.dll
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLite-net.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.batteries_green.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/SQLitePCLRaw.batteries_v2.dll
@@ -77,6 +79,8 @@ C:/Users/Lenovo/Documents/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/De
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/System.Net.Http.xml
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/System.Net.Http.Extensions.xml
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/System.Net.Http.Primitives.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.xml
+/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AngleSharp.xml
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csproj.CoreCompileInputs.cache
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.VideoPage.xaml.g.cs
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.StartPage.xaml.g.cs
@@ -84,8 +88,3 @@ C:/Users/Lenovo/Documents/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/De
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.Views.BroadcastPage.xaml.g.cs
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.dll
 /Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.pdb
-/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.dll
-/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/Newtonsoft.Json.xml
-/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/obj/Debug/AceStreamPlayer.csprojResolveAssemblyReference.cache
-/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AngleSharp.dll
-/Users/madsen/AceStreamPlayer/AceStreamPlayer/AceStreamPlayer/bin/Debug/AngleSharp.xml

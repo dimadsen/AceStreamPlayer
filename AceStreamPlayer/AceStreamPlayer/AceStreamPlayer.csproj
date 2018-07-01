@@ -62,13 +62,16 @@
       <DependentUpon>LeaguePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\LeagueViewModel.cs" />
-    <Compile Include="ISQLite.cs" />
     <Compile Include="ViewModels\BroadcastViewModel.cs" />
     <Compile Include="Views\BroadcastPage.xaml.cs">
       <DependentUpon>BroadcastPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\VideoViewModel.cs" />
-    <Compile Include="Response.cs" />
+    <Compile Include="DataBase\ISQLite.cs" />
+    <Compile Include="DataBase\DataBase.cs" />
+    <Compile Include="AdditionalClasses\Parser.cs" />
+    <Compile Include="AdditionalClasses\Worker.cs" />
+    <Compile Include="AdditionalClasses\Response.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -130,6 +133,10 @@
     <Reference Include="AngleSharp">
       <HintPath>..\..\packages\AngleSharp.0.9.9.2\lib\portable-windows8+net45+windowsphone8+wpa+monoandroid+monotouch\AngleSharp.dll</HintPath>
     </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="DataBase\" />
+    <Folder Include="AdditionalClasses\" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.2.5.1.444934\build\portable-win+net45+wp80+win81+wpa81\Xamarin.Forms.targets')" />

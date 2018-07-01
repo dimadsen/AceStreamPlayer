@@ -7,6 +7,7 @@ using System.Net.Http;
 using System.Threading.Tasks;
 using AngleSharp;
 using AngleSharp.Dom;
+using AngleSharp.Extensions;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using Xamarin.Forms;
@@ -56,28 +57,6 @@ namespace AceStreamPlayer
 			{
 				return default(T);
 			}
-		}
-
-		protected ObservableCollection<T> GetCollection<T>() where T : new()
-		{
-			var list = App.DataBase.Table<T>().ToList();
-			var collection = new ObservableCollection<T>(list);
-
-			return collection;
-		}
-
-		protected async Task GetIdUrl()
-		{
-			var url = "https://livesport.ws/league/2018-fifa-world-cup";
-			var config = Configuration.Default.WithDefaultLoader();
-			var document = await BrowsingContext.New(config).OpenAsync(url);
-
-			var hrefs = document.QuerySelectorAll("a").Where(x => x.ClassName == "dark-btn").ToList();
-
-			var urls = new List<string>();
-
-			hrefs.ForEach(href => urls.Add((string)href.GetType().GetProperty("Href").GetValue(href)));
-
 		}
 
 		#endregion

@@ -5,19 +5,7 @@ namespace AceStreamPlayer
 {
     public class App : Application
     {
-        private const string _databaseName = "AceStreamDB.db";
-        private static SQLiteConnection _db = null;
-
-        public static SQLiteConnection DataBase
-        {
-            get
-            {
-                if (_db == null)
-                    _db = new SQLiteConnection(_databaseName);
-
-                return _db;
-            }
-        }
+		
         public App()
         {
             MainPage = new NavigationPage(new StartPage() { Title = "Футбол. Выбор чемпионата" })
