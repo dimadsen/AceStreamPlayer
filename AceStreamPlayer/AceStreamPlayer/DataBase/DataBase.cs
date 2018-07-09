@@ -5,6 +5,7 @@ using System.Linq;
 using SQLite;
 using Xamarin.Forms.Internals;
 
+
 namespace AceStreamPlayer
 {
 	public static class DataBase
@@ -18,7 +19,7 @@ namespace AceStreamPlayer
 			{
 				if (_db == null)
 					_db = new SQLiteConnection(_databaseName);
-
+                
 				return _db;
 			}
 		}
@@ -57,6 +58,7 @@ namespace AceStreamPlayer
 
 		}
 
+  
 		public static ObservableCollection<T> GetCollection<T>() where T : new()
 		{
 

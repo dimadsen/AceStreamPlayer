@@ -12,13 +12,13 @@ namespace AceStreamPlayer
 	{
 		public static Championat GetChampionat(string champUrl)
 		{
-			var matchesUrls = GetMatchesUrls(GetDocument(champUrl).Result);
-
 			var championat = CreateChampionat(GetDocument(champUrl).Result);
 
-			matchesUrls.ForEach(m =>
+			var matchesUrls = GetMatchesUrls(GetDocument(champUrl).Result);
+
+			matchesUrls.ForEach(matchUrl =>
 		   {
-			   championat.Matches.Add(CreateMatch(GetDocument(m).Result, championat));
+			   championat.Matches.Add(CreateMatch(GetDocument(matchUrl).Result, championat));
 		   });
 
 			return championat;
@@ -36,6 +36,7 @@ namespace AceStreamPlayer
 		{
 			var championat = new Championat();
 
+			championat.SportId = 1;
 			championat.Name = document.QuerySelectorAll("section").Where(x => x.ClassName == "general-info").First().QuerySelectorAll("div").Where(x => x.ClassName == "title-holder").First().
 				QuerySelectorAll("h1").Where(x => x.ClassName == "name").First().TextContent;
 
@@ -51,7 +52,7 @@ namespace AceStreamPlayer
 			var commands = document.QuerySelectorAll("section").Where(x => x.ClassName == "info-holder").First().
 							   QuerySelectorAll("div").Where(x => x.ClassName == "command").ToList();
 
-			for (int i = 1; i < commands.Count; i++)
+			for (int i = 1; i <= commands.Count; i++)
 			{
 				if (i == 1)
 					match.Hosts = $"{GetCommandName(commands[0], true, true)} {GetCommandName(commands[0], false, true)}";
@@ -96,6 +97,11 @@ namespace AceStreamPlayer
 			return document.Result;
 		}
 
+		/// <summary>
+		/// Сначала загружаем общую страницу чемпионата, чтобы получить страницы матчей и перебрать их 
+		/// </summary>
+		/// <returns>The matches urls.</returns>
+		/// <param name="document">Document.</param>
 		private static List<string> GetMatchesUrls(IDocument document)
 		{
 			var matchesUrls = new List<string>();
@@ -105,6 +111,7 @@ namespace AceStreamPlayer
 
 			return matchesUrls;
 		}
+
 
 	}
 }

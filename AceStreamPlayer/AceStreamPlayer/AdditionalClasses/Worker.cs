@@ -7,8 +7,10 @@ namespace AceStreamPlayer
 {
 	public static class Worker
 	{
-		public static void Start(List<string> championatsUrls)
+		public static void Start()
 		{
+			var championatsUrls = GetUrls();
+
 			championatsUrls.ForEach(url =>
 			{
 				var championat = Parser.GetChampionat(url);
@@ -16,9 +18,9 @@ namespace AceStreamPlayer
 			});
 		}
 
-		public static List<string> GetUrls()
+		private static string[] GetUrls()
         {
-            var urls = new List<string>()
+            var urls = new string[]
             {
                 "https://livesport.ws/league/2018-fifa-world-cup"
             };
