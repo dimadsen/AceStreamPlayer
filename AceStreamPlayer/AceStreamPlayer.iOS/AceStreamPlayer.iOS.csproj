@@ -28,6 +28,7 @@
     <MtouchLink>SdkOnly</MtouchLink>
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -35,9 +36,10 @@
     <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <MtouchLink>None</MtouchLink>
+    <MtouchLink>SdkOnly</MtouchLink>
     <MtouchArch>i386, x86_64</MtouchArch>
     <ConsolePause>false</ConsolePause>
+    <CodesignKey>iPhone Developer</CodesignKey>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -102,9 +104,6 @@
     <ITunesArtwork Include="iTunesArtwork%402x" />
     <None Include="packages.config" />
     <Compile Include="SQLite.cs" />
-    <Content Include="Resources\AceStreamDB.db">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <BundleResource Include="Resources\porto.png" />
     <BundleResource Include="Resources\russia.png" />
     <BundleResource Include="Resources\spain.png" />
@@ -124,6 +123,8 @@
     <BundleResource Include="Resources\LaunchImage-Portrait~ipad.png" />
     <BundleResource Include="Resources\LaunchImage.png" />
     <BundleResource Include="Resources\LaunchImage%402x.png" />
+    <BundleResource Include="Resources\rpl.png" />
+    <BundleResource Include="Resources\apl.png" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Icon-60%403x.png" />
@@ -178,13 +179,13 @@
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Default-Portrait%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-60%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-76%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png" />
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\LaunchImage%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard2.0\Xamarin.Forms.targets')" />

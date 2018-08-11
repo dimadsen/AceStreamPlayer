@@ -12,7 +12,7 @@ namespace AceStreamPlayer
 	{
 		public StartViewModel()
 		{
-			_refreshCommand = new Command(() =>
+			refreshCommand = new Command(() =>
 		   {
 			   IsBusy = true;
 			   Championats = RefreshList();
@@ -35,8 +35,9 @@ namespace AceStreamPlayer
 
 					OnPropertyChanged("selectedChampionat");
 					ShowMatches(selectedChampionat);
-
+					//selectedChampionat = null;
 				}
+
 			}
 		}
 		private ObservableCollection<Championat> championats;
@@ -46,17 +47,21 @@ namespace AceStreamPlayer
 			{
 				if (championats == null)
 				{
-					championats = DataBase.GetCollection<Championat>();
+					championats = App.Sql.GetCollection<Championat>();
 				}
 				return championats;
 			}
 
-			set { championats = value; }
+			set
+			{
+				championats = value;
+				OnPropertyChanged("Championats");
+			}
 		}
 
 		private void ShowMatches(Championat champ)
 		{
-			var matches = DataBase.Sql.Table<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
+			var matches = App.Sql.GetCollection<Match>().Where(m => m.ChampionatId == champ.Id).ToList();
 
 			Navigation.PushAsync(new LeaguePage(matches)
 			{
@@ -68,9 +73,9 @@ namespace AceStreamPlayer
 		private ObservableCollection<Championat> RefreshList()
 		{
 			IsRefreshing = true;
-			Worker.Start();
+			Worker.StartEventParse();
 			IsRefreshing = false;
-			return DataBase.GetCollection<Championat>();
+			return App.Sql.GetCollection<Championat>();
 		}
 
 	}

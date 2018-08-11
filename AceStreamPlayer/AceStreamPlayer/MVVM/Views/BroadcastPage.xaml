@@ -9,17 +9,28 @@
         <Grid.RowDefinitions>
             <RowDefinition Height="0.8*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.7*"/>
+            <RowDefinition Height="0.35*"/>
+            <RowDefinition Height="0.35*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding PictureHosts}" HorizontalOptions="Fill"  />
-        <Label Grid.Column="0" Grid.Row="2" TextColor="Navy" Text="{Binding Hosts}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment=" Center"/>
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding PictureHosts }" HorizontalOptions="Fill"  />
+        <!--<Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  HorizontalOptions="Fill"> 
+        <Image.Source >
+                <UriImageSource Uri="{Binding PictureHosts}"> </UriImageSource>
+            </Image.Source>
+        </Image>-->
+        <Label Grid.Column="0" Grid.Row="2" TextColor="Navy" Text="{Binding Hosts}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment=" Center"/>
+        <Label Grid.Column="0" Grid.Row="3" TextColor="Navy" Text="{Binding HostsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
         <Image Grid.Column="2" Grid.Row="0"  Grid.RowSpan="2" Source="{Binding PictureVisitors}" HorizontalOptions="Fill"/>
         <Label Grid.Column="1" Grid.Row="0" TextColor="Maroon" Text="{Binding Date }" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="11"/>
         <Label Grid.Column="1" Grid.Row="1" TextColor="Maroon" Text="{Binding Stadium}" FontAttributes="Italic" FontSize="11" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="2" TextColor="Navy" Text="{Binding Visitors}" VerticalTextAlignment="Center" FontSize="13" HorizontalTextAlignment="Center"/>
-        <ScrollView Grid.Column="0" Grid.Row="3" Grid.ColumnSpan="3">
-            <ListView  ItemsSource ="{Binding References}" RowHeight="20"   SelectedItem="{Binding Path = SelectedReference}" SeparatorColor="Transparent" SeparatorVisibility="Default" >
+        <Label Grid.Column="2" Grid.Row="2" TextColor="Navy" Text="{Binding Visitors}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment="Center"/>
+        <Label Grid.Column="2" Grid.Row="3" TextColor="Navy" Text="{Binding VisitorsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
+        <ScrollView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
+            <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}"   IsRunning="{Binding IsBusy}"/>
+            <ListView  ItemsSource ="{Binding References}" RowHeight="20"   SelectedItem="{Binding Path = SelectedReference}" SeparatorColor="Transparent" SeparatorVisibility="None"
+                       IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"  
+                  IsRefreshing="{Binding IsRefreshing}" >
                 <ListView.Header>
                     <Grid>
                         <Grid.ColumnDefinitions  >
@@ -36,6 +47,7 @@
                         <Label Text="Формат" TextColor="Purple" Grid.Column="4"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
                     </Grid>
                 </ListView.Header>
+
                 <ListView.ItemTemplate >
                     <DataTemplate >
                         <ViewCell >
@@ -47,7 +59,7 @@
                                     <ColumnDefinition Width="0.8*" />
                                     <ColumnDefinition Width="0.8*" />
                                 </Grid.ColumnDefinitions>
-                                <Image Source="{Binding Language}" Grid.Column="0"   HeightRequest="5" WidthRequest="5"  ></Image>
+                                <Image Source="{Binding LanguagePicture}" Grid.Column="0"   HeightRequest="5" WidthRequest="5"  ></Image>
                                 <Label Text="{Binding Channel}" TextColor="Navy" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
                                 <Label Text="{Binding Quality}" TextColor="Navy" Grid.Column="2"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
                                 <Label Text="{Binding Fps}" TextColor="Navy" Grid.Column="3"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>

@@ -2,6 +2,7 @@
 using System.IO;
 using Xamarin.Forms;
 
+[assembly: Xamarin.Forms.Dependency(typeof(AceStreamPlayer.iOS.SQLite))]
 namespace AceStreamPlayer.iOS
 {
     public class SQLite: ISQLite
@@ -18,7 +19,10 @@ namespace AceStreamPlayer.iOS
                 File.Copy(sqliteFilename, path);
             }
 
+
             return path;
+
+
         }
     }
 }

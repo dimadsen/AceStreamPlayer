@@ -1,4 +1,5 @@
-﻿using FormsVideoLibrary;
+﻿using AceStreamPlayer.AdditionalClasses;
+using FormsVideoLibrary;
 
 namespace AceStreamPlayer
 {
@@ -15,7 +16,7 @@ namespace AceStreamPlayer
 		{
 			var uri = $"http://192.168.1.37:6878/ace/manifest.m3u8?format=json&id={reference.ContentId}";
 
-			var url = await GetUrl<Response>(reference.ContentId);
+			var url = await HttpWorker.GetAceStreamUrl<Response>(reference.ContentId);
 			player.Source = new UriVideoSource
 			{
 				Uri = url?.playback_url

@@ -1,71 +1,126 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Globalization;
 using System.Linq;
+using AceStreamPlayer;
 using SQLite;
+using Xamarin.Forms;
 using Xamarin.Forms.Internals;
+
 
 
 namespace AceStreamPlayer
 {
-	public static class DataBase
+	public class DataBase
 	{
-		private const string _databaseName = "AceStreamDB.db";
-		private static SQLiteConnection _db = null;
 
-		public static SQLiteConnection Sql
+		private SQLiteConnection database;
+
+		public DataBase(string filename)
 		{
-			get
-			{
-				if (_db == null)
-					_db = new SQLiteConnection(_databaseName);
-                
-				return _db;
-			}
+
+			string databasePath = DependencyService.Get<ISQLite>().GetDatabasePath(filename);
+			database = new SQLiteConnection(databasePath);
 		}
 
 
-
-		private static void SaveOrUpdateMatch(Match match)
+		private void SaveOrUpdateMatch(Match match, List<Match> matches)
 		{
-			var existingMatch = Sql.Table<Match>().Where(x => x.Hosts == match.Hosts && x.Visitors == match.Visitors && x.Date == match.Date).FirstOrDefault();
+			var existingMatch = database.Table<Match>().Where(x => x.Hosts == match.Hosts && x.Visitors == match.Visitors && x.Date == match.Date).FirstOrDefault();
 
 			if (existingMatch == null)
-				Sql.Insert(match);
+				database.Insert(match);
 
 			else
 			{
 				match.Id = existingMatch.Id;
-				Sql.Update(match);
+				database.Update(match);
 			}
+
+			//CompleteMatches(matches);
 		}
 
-		public static void SaveOrUpdateChampionat(Championat championat)
+        
+		public void SaveOrUpdateChampionat(Championat championat)
 		{
-			var existingChamp = Sql.Table<Championat>().Where(x => x.Name == championat.Name).FirstOrDefault();
+			var existingChamp = database.Table<Championat>().Where(x => x.Name == championat.Name).FirstOrDefault();
 
 			if (existingChamp == null)
-				Sql.Insert(championat);
+			{
+				database.Insert(championat);
+				existingChamp = database.Table<Championat>().Where(x => x.Name == championat.Name).FirstOrDefault();
+				championat.Matches.ForEach(m =>
+				{
+					m.ChampionatId = existingChamp.Id;
+					SaveOrUpdateMatch(m,championat.Matches);
+				});
+			}
+
 			else
 			{
 				championat.Id = existingChamp.Id;
+				existingChamp.Tour = championat.Tour;
+
+				database.Update(existingChamp);
+
 				championat.Matches.ForEach(m =>
 				{
 					m.ChampionatId = championat.Id;
-					SaveOrUpdateMatch(m);
+					SaveOrUpdateMatch(m, championat.Matches);
 				});
 			}
 
 		}
 
-  
-		public static ObservableCollection<T> GetCollection<T>() where T : new()
+		public void SaveReference (Reference reference)
 		{
+			var existingRef = database.Table<Reference>().Where(r => r.MatchId == reference.MatchId && r.ContentId == reference.ContentId).FirstOrDefault();
 
-			var list = Sql.Table<T>().ToList();
+			if (existingRef == null)
+				database.Insert(reference);
+		}
+
+		public ObservableCollection<T> GetCollection<T>() where T : new()
+		{
+			
+			var list = database.Table<T>().ToList();
 			var collection = new ObservableCollection<T>(list);
-
+            
 			return collection;
 		}
+
+		public ObservableCollection<Reference> GetReferences(Match match)
+		{
+			var list = database.Table<Reference>().Where(r => r.MatchId == match.Id).ToList();
+			var collection = new ObservableCollection<Reference>(list);
+
+            return collection;
+		}
+        
+		private void CompleteMatches(List<Match> matches)
+		{
+			var databaseMatches = database.Table<Match>().ToList().Where(m => m.ChampionatId == matches.First().ChampionatId && !matches.Contains(m)).ToList();
+
+			databaseMatches.ForEach(m =>
+			{
+				m.Status = "Завершен";
+				database.Update(m);
+			});
+
+		}
+		private static DateTime DateParse(string matchDate)
+        {
+            var date = DateTime.ParseExact(matchDate, "dd MMMM yyyy, HH:mm", new CultureInfo("ru-RU"));
+			return date;
+        }
+
+
+		//private string GetPicture()
+		//{
+		//	var u = new UriImageSource() { Uri = new Uri("https://static.livesport.ws/images/logo/country/croatia.png") };
+            
+		//}
+        
 	}
 }

@@ -49,7 +49,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="DataBase\ISQLite.cs" />
     <Compile Include="DataBase\DataBase.cs" />
-    <Compile Include="AdditionalClasses\Parser.cs" />
+    <Compile Include="AdditionalClasses\EventParser.cs" />
     <Compile Include="AdditionalClasses\Worker.cs" />
     <Compile Include="AdditionalClasses\Response.cs" />
     <Compile Include="MVVM\Models\Championat.cs" />
@@ -73,6 +73,8 @@
     <Compile Include="MVVM\ViewModels\LeagueViewModel.cs" />
     <Compile Include="MVVM\ViewModels\StartViewModel.cs" />
     <Compile Include="MVVM\ViewModels\VideoViewModel.cs" />
+    <Compile Include="AdditionalClasses\HttpWorker.cs" />
+    <Compile Include="AdditionalClasses\ReferencesParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -144,4 +146,15 @@
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Portable\$(TargetFrameworkVersion)\Microsoft.Portable.CSharp.targets" />
   <Import Project="..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets" Condition="Exists('..\..\packages\Microsoft.Bcl.Build.1.0.21\build\Microsoft.Bcl.Build.targets')" />
   <Import Project="..\..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.targets" Condition="Exists('..\..\packages\Xamarin.Forms.3.1.0.583944\build\netstandard1.0\Xamarin.Forms.targets')" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <Policies>
+          <VersionControlPolicy>
+            <CommitMessageStyle Header="" Indent="" FirstFilePrefix="* " FileSeparator=":&#xA;* " LastFilePostfix=": " LineAlign="2" InterMessageLines="1" IncludeDirectoryPaths="False" Wrap="True" />
+          </VersionControlPolicy>
+        </Policies>
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
 </Project>

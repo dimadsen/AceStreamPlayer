@@ -32,34 +32,6 @@ namespace AceStreamPlayer
 
 		#endregion
 
-		#region Methods
-		protected async Task<T> GetUrl<T>(string uri)
-		{
-			try
-			{
-				var client = new HttpClient();
-				client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");
-				client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0");
-
-				client.BaseAddress = new Uri(uri);
-
-				var response = await client.GetAsync(new Uri(uri));
-				response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
-
-				var content = await response.Content.ReadAsStringAsync();
-				var json = JObject.Parse(content).SelectToken($"$.{typeof(T).Name}");
-
-				var url = JsonConvert.DeserializeObject<T>(json.ToString());
-
-				return url;
-			}
-			catch
-			{
-				return default(T);
-			}
-		}
-
-		#endregion
 
 		#region Properties
 
@@ -87,12 +59,12 @@ namespace AceStreamPlayer
 
 		#endregion 
 		#region Commands
-		protected Command _refreshCommand;
+		protected Command refreshCommand;
 		public Command RefreshCommand
 		{
 			get
 			{
-				return _refreshCommand;
+				return refreshCommand;
 			}
 		}
 		#endregion

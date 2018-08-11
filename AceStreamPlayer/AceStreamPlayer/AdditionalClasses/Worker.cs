@@ -1,20 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using AceStreamPlayer.AdditionalClasses;
 using Xamarin.Forms.Internals;
 
 namespace AceStreamPlayer
 {
 	public static class Worker
 	{
-		public static void Start()
+		public static void StartEventParse()
 		{
 			var championatsUrls = GetUrls();
 
 			championatsUrls.ForEach(url =>
 			{
-				var championat = Parser.GetChampionat(url);
-				DataBase.SaveOrUpdateChampionat(championat);
+				var championat = EventParser.GetChampionat(url);
+				App.Sql.SaveOrUpdateChampionat(championat);
 			});
 		}
 
@@ -22,9 +23,19 @@ namespace AceStreamPlayer
         {
             var urls = new string[]
             {
-                "https://livesport.ws/league/2018-fifa-world-cup"
+				"https://livesport.ws/league/russia-premier-league",
+				"https://livesport.ws/league/england-premier-league"
             };
             return urls;
         }
+
+		public static void StartReferencesParse(Match match)
+		{
+			ReferencesParser.GetReferences(match);
+			match.References.ForEach(reference =>
+			{
+				App.Sql.SaveReference(reference);
+			});
+		}
 	}
 }

@@ -5,16 +5,29 @@ namespace AceStreamPlayer
 {
     public class App : Application
     {
-		
-        public App()
+		private const string _databaseName = "AceStreamDB.db";
+
+		private static DataBase _sql;
+		public static DataBase Sql
         {
+            get
+            {
+				if (_sql == null)             
+                    
+					_sql = new DataBase(_databaseName);           
+                              
+                return _sql;
+            }
+        }
+        public App()
+		{ 
             MainPage = new NavigationPage(new StartPage() { Title = "Футбол. Выбор чемпионата" })
             {
                 BarBackgroundColor = Color.MediumSeaGreen
             };
 
         }
-
+        
         protected override void OnStart()
         {
             // Handle when your app starts
