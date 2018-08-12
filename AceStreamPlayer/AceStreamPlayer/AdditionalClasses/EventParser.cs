@@ -83,12 +83,14 @@ namespace AceStreamPlayer
 				{
 					match.Hosts = GetCommandName(commands[0], true);
 					match.HostsCountry = GetCommandCountry(commands[0]);
+					match.PictureHosts = GetPicture(commands[0]);
 				}
 
 				else if (i == 2)
 				{
 					match.Visitors = GetCommandName(commands[1], false);
 					match.VisitorsCountry = GetCommandCountry(commands[1]);
+					match.PictureVisitors = GetPicture(commands[1]);
 				}
 			}
 		}
@@ -125,7 +127,14 @@ namespace AceStreamPlayer
 			var country = element.QuerySelectorAll("div").Where(x => x.ClassName == "country").First().TextContent;
 			return country;
 		}
+        
+		private static string GetPicture(IElement element)
+		{
+			var picture = element.QuerySelector("a").QuerySelector("img").Attributes.Where(x => x.Name == "src").First().Value;
 
+			var modPicture = picture.Replace("static.", string.Empty);
+			return modPicture;
+		}
 		private static void ShapingUrlForHttpRequest(IDocument document, Match match)
         {
             var eventId = document.QuerySelectorAll("div").Where(x => x.ClassName == "home-staff").First().Attributes.

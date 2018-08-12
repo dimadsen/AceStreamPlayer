@@ -116,14 +116,14 @@ namespace AceStreamPlayer
         }
 
 
-		public Uri PictureHosts
+		public string PictureHosts
 		{
-			get { return GetPicture(); }
+			get { return _match.PictureHosts; }
 			set
 			{
-				if(uri!= value)
+				if(_match.PictureHosts != value)
 				{
-					uri = value;
+					_match.PictureHosts = value;
 					OnPropertyChanged("PictureHosts");
 				}
 			}
@@ -175,27 +175,10 @@ namespace AceStreamPlayer
 		}
 		#endregion
 
-		private Uri GetPicture()
-		{
-			var b = SecuredUriImageSource.FromSecureUri(new Uri("https://img.gettextbooks.com/pi/9781490245805"));
-			return b.UriImageSource.Uri;
-		}
 
 
 	}
-	public class SecuredUriImageSource : ImageSource
-    {
-        public readonly UriImageSource UriImageSource = new UriImageSource();
 
-        public static SecuredUriImageSource FromSecureUri(Uri uri)
-        {
-            var source = new SecuredUriImageSource();
-
-            source.UriImageSource.Uri = uri;
-
-            return source;
-        }
-    }
 
     
 }

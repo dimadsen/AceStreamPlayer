@@ -13,23 +13,29 @@
             <RowDefinition Height="0.35*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" Source="{Binding PictureHosts }" HorizontalOptions="Fill"  />
-        <!--<Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  HorizontalOptions="Fill"> 
+
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  HorizontalOptions="Fill"> 
         <Image.Source >
-                <UriImageSource Uri="{Binding PictureHosts}"> </UriImageSource>
+                <UriImageSource Uri="{Binding PictureHosts}" CachingEnabled="true"> </UriImageSource>
             </Image.Source>
-        </Image>-->
+        </Image>
         <Label Grid.Column="0" Grid.Row="2" TextColor="Navy" Text="{Binding Hosts}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment=" Center"/>
         <Label Grid.Column="0" Grid.Row="3" TextColor="Navy" Text="{Binding HostsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
-        <Image Grid.Column="2" Grid.Row="0"  Grid.RowSpan="2" Source="{Binding PictureVisitors}" HorizontalOptions="Fill"/>
+
+                <Image Grid.Column="2" Grid.Row="0"  Grid.RowSpan="2"  HorizontalOptions="Fill"> 
+        <Image.Source >
+                <UriImageSource Uri="{Binding PictureVisitors}" CachingEnabled="true"> </UriImageSource>
+            </Image.Source>
+        </Image>
         <Label Grid.Column="1" Grid.Row="0" TextColor="Maroon" Text="{Binding Date }" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="11"/>
         <Label Grid.Column="1" Grid.Row="1" TextColor="Maroon" Text="{Binding Stadium}" FontAttributes="Italic" FontSize="11" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
         <Label Grid.Column="2" Grid.Row="2" TextColor="Navy" Text="{Binding Visitors}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment="Center"/>
         <Label Grid.Column="2" Grid.Row="3" TextColor="Navy" Text="{Binding VisitorsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
-        <ScrollView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3">
+
             <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}"   IsRunning="{Binding IsBusy}"/>
-            <ListView  ItemsSource ="{Binding References}" RowHeight="20"   SelectedItem="{Binding Path = SelectedReference}" SeparatorColor="Transparent" SeparatorVisibility="None"
-                       IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"  
+            <ListView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" 
+                ItemsSource ="{Binding References}" RowHeight="20"   SelectedItem="{Binding Path = SelectedReference}" SeparatorColor="Transparent" SeparatorVisibility="None"
+                       IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"  HasUnevenRows="true" SelectionMode="Single"
                   IsRefreshing="{Binding IsRefreshing}" >
                 <ListView.Header>
                     <Grid>
@@ -49,8 +55,8 @@
                 </ListView.Header>
 
                 <ListView.ItemTemplate >
-                    <DataTemplate >
-                        <ViewCell >
+                    <DataTemplate  >
+                        <ViewCell  >
                             <Grid >
                                 <Grid.ColumnDefinitions  >
                                     <ColumnDefinition Width="0.8*"/>
@@ -69,6 +75,6 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-        </ScrollView>
+       
     </Grid>
 </ContentPage>
