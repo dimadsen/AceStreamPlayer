@@ -16,62 +16,58 @@ using Xamarin.Forms.Internals;
 
 namespace AceStreamPlayer
 {
-	public abstract class BaseViewModel : INotifyPropertyChanged
-	{
-		#region INotifyPropertyChanged
-		public event PropertyChangedEventHandler PropertyChanged;
+    public abstract class BaseViewModel : INotifyPropertyChanged
+    {
+        #region INotifyPropertyChanged
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-		protected virtual void OnPropertyChanged(string propertyName)
-		{
-			PropertyChangedEventHandler handler = PropertyChanged;
-			if (handler != null)
-			{
-				handler.Invoke(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-
-		protected void RaisePropertyChanged([CallerMemberName] string caller = null)
+        protected virtual void OnPropertyChanged(string propertyName)
         {
-			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
-		}
-		#endregion
+            PropertyChangedEventHandler handler = PropertyChanged;
+            if (handler != null)
+            {
+                handler.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            }
+        }
+       
+        #endregion
+        
+        #region Properties
 
+        protected bool _isBusy;
+        public bool IsBusy
+        {
+            get { return _isBusy; }
+            set
+            {
+                _isBusy = value;
+                OnPropertyChanged(nameof(IsBusy));
+            }
+        }
 
-		#region Properties
+        protected bool _isRefreshing;
+        public bool IsRefreshing
+        {
+            get { return _isRefreshing; }
+            set
+            {
+                _isRefreshing = value;
+                OnPropertyChanged(nameof(IsRefreshing));
+            }
+        }
 
-		protected bool _isBusy;
-		public bool IsBusy
-		{
-			get { return _isBusy; }
-			set
-			{
-				_isBusy = value;
-				OnPropertyChanged(nameof(IsBusy));
-			}
-		}  		protected bool _isRefreshing;
-		public bool IsRefreshing
-		{
-			get { return _isRefreshing; }
-			set
-			{
-				_isRefreshing = value;
-				OnPropertyChanged(nameof(IsRefreshing));
-			}
-		}
+        public INavigation Navigation { get; set; }
 
-		public INavigation Navigation { get; set; }
-
-		#endregion 
-		#region Commands
-		protected Command refreshCommand;
-		public Command RefreshCommand
-		{
-			get
-			{
-				return refreshCommand;
-			}
-		}
-		#endregion
-	}
+        #endregion 
+        #region Commands
+        protected Command refreshCommand;
+        public Command RefreshCommand
+        {
+            get
+            {
+                return refreshCommand;
+            }
+        }
+        #endregion
+    }
 }

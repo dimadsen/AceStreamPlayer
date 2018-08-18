@@ -2,19 +2,19 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="AceStreamPlayer.LeaguePage">
     <StackLayout>
         <ScrollView>
-        <ListView x:Name="matches"  SeparatorVisibility="None" 
+            <ListView x:Name="matches"  SeparatorVisibility="None" 
               HasUnevenRows="true" SelectedItem="{Binding SelectedMatch, Mode=TwoWay}"
               ItemsSource="{Binding Matches}" >
-            <ListView.ItemTemplate >
-                <DataTemplate >
-                    <ImageCell
+                <ListView.ItemTemplate >
+                    <DataTemplate >
+                        <ImageCell
                         Text="{Binding Name}"
                         Detail="{Binding Time}"
                         TextColor=" Navy"
                         DetailColor="Gray"/>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-            </ScrollView>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </ScrollView>
     </StackLayout>
 </ContentPage>

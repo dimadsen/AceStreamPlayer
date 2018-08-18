@@ -5,14 +5,14 @@ namespace AceStreamPlayer
 {
     public class Match
     {
-		[PrimaryKey, AutoIncrement ]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         [Ignore]
         public string Name { get; set; }
         public string Hosts { get; set; }
-		public string HostsCountry { get; set; }
+        public string HostsCountry { get; set; }
         public string Visitors { get; set; }
-		public string VisitorsCountry { get; set; }
+        public string VisitorsCountry { get; set; }
         public string Date { get; set; }
         [Ignore]
         public string Time { get; set; }
@@ -21,10 +21,10 @@ namespace AceStreamPlayer
         public string PictureVisitors { get; set; }
         public string Status { get; set; }
         public int ChampionatId { get; set; }
-		public string Url { get; set; }
+        public string Url { get; set; }
         [Ignore]
         public Championat Championat { get; set; }
-		[Ignore]
+        [Ignore]
         public List<Reference> References { get; set; }
     }
 }

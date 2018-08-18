@@ -4,7 +4,7 @@ namespace AceStreamPlayer
 {
     public class Reference
     {
-		[PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string ContentId { get; set; }
         public string Quality { get; set; }

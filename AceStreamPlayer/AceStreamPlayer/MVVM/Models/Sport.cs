@@ -5,10 +5,10 @@ namespace AceStreamPlayer
 {
     public class Sport
     {
-		[PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
-		[Ignore]
+        [Ignore]
         public List<Championat> Championats { get; set; }
     }
 }

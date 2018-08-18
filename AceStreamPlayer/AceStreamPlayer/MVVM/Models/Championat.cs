@@ -5,7 +5,7 @@ namespace AceStreamPlayer
 {
     public class Championat
     {
-		[PrimaryKey, AutoIncrement]
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Name { get; set; }
         public string Tour { get; set; }
@@ -13,7 +13,7 @@ namespace AceStreamPlayer
         [Ignore]
         public Sport Sport { get; set; }
         public int SportId { get; set; }
-		[Ignore]
+        [Ignore]
         public List<Match> Matches { get; set; }
     }
 }

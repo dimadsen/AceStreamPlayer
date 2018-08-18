@@ -10,8 +10,7 @@ namespace AceStreamPlayer.AdditionalClasses
 {
     public static class HttpWorker
     {
-		
-		public async static Task<T> GetAceStreamUrl<T>(string uri)
+        public async static Task<T> GetAceStreamUrl<T>(string uri)
         {
             try
             {
@@ -25,40 +24,40 @@ namespace AceStreamPlayer.AdditionalClasses
                 response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
 
                 var content = await response.Content.ReadAsStringAsync();
-				var json = JObject.Parse(content).SelectToken($"$.response");
+                var json = JObject.Parse(content).SelectToken($"$.response");
 
                 var url = JsonConvert.DeserializeObject<T>(json.ToString());
 
                 return url;
             }
-			catch(Exception ex)
+            catch (Exception ex)
             {
                 return default(T);
             }
         }
 
-		public async static Task<IHtmlDocument> GetReferencesTable(string url)
-		{
-			
-				var client = new HttpClient();
-				client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");
-				client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0");
+        public async static Task<IHtmlDocument> GetReferencesTable(string url)
+        {
 
-				client.BaseAddress = new Uri(url);
+            var client = new HttpClient();
+            client.DefaultRequestHeaders.TryAddWithoutValidation("Accept", "application/json");
+            client.DefaultRequestHeaders.TryAddWithoutValidation("User-Agent", "Mozilla/5.0 (Windows NT 6.2; WOW64; rv:19.0) Gecko/20100101 Firefox/19.0");
 
-				var response = client.GetAsync(new Uri(url));
-				//response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
-                
-				var content = response.Result.Content.ReadAsStringAsync();
+            client.BaseAddress = new Uri(url);
+
+            var response = client.GetAsync(new Uri(url));
+            //response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
+
+            var content = response.Result.Content.ReadAsStringAsync();
 
 
-				var json = JObject.Parse(content.Result).SelectToken($"$.broadcast").ToString();
+            var json = JObject.Parse(content.Result).SelectToken($"$.broadcast").ToString();
 
-				var parser = new HtmlParser();
-				var doc = parser.Parse(json);
+            var parser = new HtmlParser();
+            var doc = parser.Parse(json);
 
-				return doc;
+            return doc;
 
-		}
+        }
     }
 }

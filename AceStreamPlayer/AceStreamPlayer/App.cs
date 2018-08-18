@@ -1,5 +1,4 @@
-﻿using SQLite;
-using Xamarin.Forms;
+﻿using Xamarin.Forms;
 
 namespace AceStreamPlayer
 {
@@ -12,9 +11,8 @@ namespace AceStreamPlayer
         {
             get
             {
-				if (_sql == null)             
-                    
-					_sql = new DataBase(_databaseName);           
+				if (_sql == null)
+                    _sql = new DataBase(_databaseName);           
                               
                 return _sql;
             }

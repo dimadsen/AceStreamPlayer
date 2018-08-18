@@ -1,17 +1,15 @@
 ﻿using System;
 using System.IO;
-using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Dependency(typeof(AceStreamPlayer.iOS.SQLite))]
 namespace AceStreamPlayer.iOS
 {
-    public class SQLite: ISQLite
+    public class SQLite : ISQLite
     {
         public string GetDatabasePath(string sqliteFilename)
         {
-            // определяем путь к бд
             string documentsPath = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
-            string libraryPath = Path.Combine(documentsPath, "..", "Library"); // папка библиотеки
+            string libraryPath = Path.Combine(documentsPath, "..", "Library");
             var path = Path.Combine(libraryPath, sqliteFilename);
 
             if (!File.Exists(path))
@@ -19,10 +17,7 @@ namespace AceStreamPlayer.iOS
                 File.Copy(sqliteFilename, path);
             }
 
-
             return path;
-
-
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using AngleSharp.Dom;
 using AngleSharp.Dom.Html;
@@ -9,40 +8,37 @@ namespace AceStreamPlayer.AdditionalClasses
 {
     public class ReferencesParser
     {
-		public static void GetReferences(Match match)
+        public static void GetReferences(Match match)
         {
-			CreateReferences(HttpWorker.GetReferencesTable(match.Url).Result, match);
+            CreateReferences(HttpWorker.GetReferencesTable(match.Url).Result, match);
         }
 
         private static void CreateReferences(IHtmlDocument doc, Match match)
         {
             match.References = new List<Reference>();
 
-			try
-			{
-				var trs = doc.QuerySelectorAll("li").Where(x => x.Attributes.Any(y => y.Value == "3")).First()
+            try
+            {
+                var trs = doc.QuerySelectorAll("li").Where(x => x.Attributes.Any(y => y.Value == "3")).First()
                  .QuerySelectorAll("tbody").First().QuerySelectorAll("tr").ToList();
 
                 trs.ForEach(tr =>
                 {
                     match.References.Add(CreateReference(tr, match.Id));
                 });
-			}
-			catch
-			{
-				
-			}
-            
+            }
+            catch
+            {
+
+            }
 
         }
 
-        
-
-		private static Reference CreateReference(IElement tr, int matchId)
+        private static Reference CreateReference(IElement tr, int matchId)
         {
             var reference = new Reference();
 
-			reference.MatchId = matchId;
+            reference.MatchId = matchId;
 
             var tds = tr.QuerySelectorAll("td").ToList();
 
@@ -50,7 +46,7 @@ namespace AceStreamPlayer.AdditionalClasses
             {
                 if (td == 1)
                 {
-					reference.LanguagePicture = tds[1].QuerySelector("img").Attributes.Where(x => x.Name == "src").First().Value.Replace("static.", string.Empty);
+                    reference.LanguagePicture = tds[1].QuerySelector("img").Attributes.Where(x => x.Name == "src").First().Value.Replace("static.", string.Empty);
                 }
                 else if (td == 2)
                 {

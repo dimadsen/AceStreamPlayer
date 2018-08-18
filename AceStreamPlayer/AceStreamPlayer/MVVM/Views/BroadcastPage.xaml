@@ -34,7 +34,7 @@
         <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
         <ListView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" ItemsSource="{Binding Path= References}" RowHeight="20" SelectedItem="{Binding Path = SelectedReference, Mode=TwoWay}" SeparatorColor="Transparent" SeparatorVisibility="None" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"
             HasUnevenRows="true" SelectionMode="Single" IsRefreshing="{Binding IsRefreshing}">
-           <ListView.Header>
+            <ListView.Header>
                 <Grid>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="0.8*" />
