@@ -50,7 +50,7 @@ namespace AceStreamPlayer.AdditionalClasses
             {
                 if (td == 1)
                 {
-                    reference.LanguagePicture = tds[1].QuerySelector("img").Attributes.Where(x => x.Name == "src").First().Value;
+					reference.LanguagePicture = tds[1].QuerySelector("img").Attributes.Where(x => x.Name == "src").First().Value.Replace("static.", string.Empty);
                 }
                 else if (td == 2)
                 {

@@ -98,6 +98,7 @@ namespace AceStreamPlayer
             return collection;
 		}
         
+
 		private void CompleteMatches(List<Match> matches)
 		{
 			var databaseMatches = database.Table<Match>().ToList().Where(m => m.ChampionatId == matches.First().ChampionatId && !matches.Contains(m)).ToList();

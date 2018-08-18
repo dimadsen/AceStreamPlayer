@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Net.Http;
+using System.Runtime.CompilerServices;
 using System.Threading.Tasks;
 using AngleSharp;
 using AngleSharp.Dom;
@@ -30,6 +31,10 @@ namespace AceStreamPlayer
 			}
 		}
 
+		protected void RaisePropertyChanged([CallerMemberName] string caller = null)
+        {
+			PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(caller));
+		}
 		#endregion
 
 

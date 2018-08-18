@@ -24,10 +24,11 @@ namespace AceStreamPlayer
 			{
 				if (value != null)
 				{
-					selectedMatch = value;
+					var match = value;
+					selectedMatch = null;
 
-					OnPropertyChanged("selectedMatch");
-					ShowReferences(selectedMatch);
+					OnPropertyChanged(nameof(SelectedMatch));
+					ShowReferences(match);
 				}
 			}
 		}

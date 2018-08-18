@@ -11,7 +11,7 @@ namespace AceStreamPlayer
 	{
 		private Match _match;
 		private List<Reference> _references;
-		private Uri uri;
+
 		public BroadcastViewModel(List<Reference> references, Match match)
 		{
 			References = new ObservableCollection<Reference>(references);
@@ -37,10 +37,11 @@ namespace AceStreamPlayer
 			{
 				if (value != null)
 				{
-					selectedReference = value;
+					var reference = value;
+					selectedReference = null;
 
-					OnPropertyChanged("selectedReference");
-					WatchMatch(selectedReference);
+					OnPropertyChanged(nameof(SelectedReference));
+					WatchMatch(reference);
 				}
 			}
 		}

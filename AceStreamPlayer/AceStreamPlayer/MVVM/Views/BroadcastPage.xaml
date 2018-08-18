@@ -4,77 +4,86 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="0.8*" />
             <RowDefinition Height="0.5*" />
-            <RowDefinition Height="0.35*"/>
-            <RowDefinition Height="0.35*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="0.35*" />
+            <RowDefinition Height="0.35*" />
+            <RowDefinition Height="2*" />
         </Grid.RowDefinitions>
-
-        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2"  HorizontalOptions="Fill"> 
-        <Image.Source >
-                <UriImageSource Uri="{Binding PictureHosts}" CachingEnabled="true"> </UriImageSource>
+        <Image Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Fill">
+            <Image.Source>
+                <UriImageSource Uri="{Binding PictureHosts}" CachingEnabled="true">
+                </UriImageSource>
             </Image.Source>
         </Image>
-        <Label Grid.Column="0" Grid.Row="2" TextColor="Navy" Text="{Binding Hosts}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment=" Center"/>
+        <Label Grid.Column="0" Grid.Row="2" TextColor="Navy" Text="{Binding Hosts}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment=" Center" />
         <Label Grid.Column="0" Grid.Row="3" TextColor="Navy" Text="{Binding HostsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
-
-                <Image Grid.Column="2" Grid.Row="0"  Grid.RowSpan="2"  HorizontalOptions="Fill"> 
-        <Image.Source >
-                <UriImageSource Uri="{Binding PictureVisitors}" CachingEnabled="true"> </UriImageSource>
+        <Image Grid.Column="2" Grid.Row="0" Grid.RowSpan="2" HorizontalOptions="Fill">
+            <Image.Source>
+                <UriImageSource Uri="{Binding PictureVisitors}" CachingEnabled="true">
+                </UriImageSource>
             </Image.Source>
         </Image>
-        <Label Grid.Column="1" Grid.Row="0" TextColor="Maroon" Text="{Binding Date }" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="11"/>
+        <Label Grid.Column="1" Grid.Row="0" TextColor="Maroon" Text="{Binding Date }" FontAttributes="Italic" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="11" />
         <Label Grid.Column="1" Grid.Row="1" TextColor="Maroon" Text="{Binding Stadium}" FontAttributes="Italic" FontSize="11" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" />
-        <Label Grid.Column="2" Grid.Row="2" TextColor="Navy" Text="{Binding Visitors}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment="Center"/>
+        <Label Grid.Column="2" Grid.Row="2" TextColor="Navy" Text="{Binding Visitors}" VerticalTextAlignment="End" FontSize="13" HorizontalTextAlignment="Center" />
         <Label Grid.Column="2" Grid.Row="3" TextColor="Navy" Text="{Binding VisitorsCountry}" VerticalTextAlignment="Start" FontSize="12" HorizontalTextAlignment=" Center"/>
-
-            <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}"   IsRunning="{Binding IsBusy}"/>
-            <ListView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" 
-                ItemsSource ="{Binding References}" RowHeight="20"   SelectedItem="{Binding Path = SelectedReference}" SeparatorColor="Transparent" SeparatorVisibility="None"
-                       IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"  HasUnevenRows="true" SelectionMode="Single"
-                  IsRefreshing="{Binding IsRefreshing}" >
-                <ListView.Header>
-                    <Grid>
-                        <Grid.ColumnDefinitions  >
-                            <ColumnDefinition Width="0.8*"/>
-                            <ColumnDefinition Width="1.3*" />
-                            <ColumnDefinition Width="1.3*" />
-                            <ColumnDefinition Width="0.8*" />
-                            <ColumnDefinition Width="0.8*" />
-                        </Grid.ColumnDefinitions>
-                        <Label Text="Язык" Grid.Column="0" TextColor="Purple" HeightRequest="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="5" FontSize="12" ></Label>
-                        <Label Text="Канал" TextColor="Purple" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                        <Label Text="Битрейт" TextColor="Purple" Grid.Column="2"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                        <Label Text="FPS" TextColor="Purple" Grid.Column="3"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                        <Label Text="Формат" TextColor="Purple" Grid.Column="4"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                    </Grid>
-                </ListView.Header>
-
-                <ListView.ItemTemplate >
-                    <DataTemplate  >
-                        <ViewCell  >
-                            <Grid >
-                                <Grid.ColumnDefinitions  >
-                                    <ColumnDefinition Width="0.8*"/>
-                                    <ColumnDefinition Width="1.3*" />
-                                    <ColumnDefinition Width="1.3*" />
-                                    <ColumnDefinition Width="0.8*" />
-                                    <ColumnDefinition Width="0.8*" />
-                                </Grid.ColumnDefinitions>
-                                <Image Source="{Binding LanguagePicture}" Grid.Column="0"   HeightRequest="5" WidthRequest="5"  ></Image>
-                                <Label Text="{Binding Channel}" TextColor="Navy" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                                <Label Text="{Binding Quality}" TextColor="Navy" Grid.Column="2"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                                <Label Text="{Binding Fps}" TextColor="Navy" Grid.Column="3"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                                <Label Text="{Binding Format}" TextColor="Navy" Grid.Column="4"  HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12" ></Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-       
+        <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}" IsRunning="{Binding IsBusy}" />
+        <ListView Grid.Column="0" Grid.Row="4" Grid.ColumnSpan="3" ItemsSource="{Binding Path= References}" RowHeight="20" SelectedItem="{Binding Path = SelectedReference, Mode=TwoWay}" SeparatorColor="Transparent" SeparatorVisibility="None" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}"
+            HasUnevenRows="true" SelectionMode="Single" IsRefreshing="{Binding IsRefreshing}">
+           <ListView.Header>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="1.3*" />
+                        <ColumnDefinition Width="1.3*" />
+                        <ColumnDefinition Width="0.8*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <Label Text="Язык" Grid.Column="0" TextColor="Purple" HeightRequest="5" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" WidthRequest="5" FontSize="12">
+                    </Label>
+                    <Label Text="Канал" TextColor="Purple" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                    </Label>
+                    <Label Text="Битрейт" TextColor="Purple" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                    </Label>
+                    <Label Text="FPS" TextColor="Purple" Grid.Column="3" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                    </Label>
+                    <Label Text="Формат" TextColor="Purple" Grid.Column="4" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                    </Label>
+                </Grid>
+            </ListView.Header>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="1.3*" />
+                                <ColumnDefinition Width="1.3*" />
+                                <ColumnDefinition Width="0.8*" />
+                                <ColumnDefinition Width="0.8*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Grid.Column="0">
+                                <Image.Source>
+                                    <UriImageSource Uri="{Binding LanguagePicture}" CachingEnabled="true">
+                                    </UriImageSource>
+                                </Image.Source>
+                            </Image>
+                            <Label Text="{Binding Channel}" TextColor="Navy" Grid.Column="1" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                            </Label>
+                            <Label Text="{Binding Quality}" TextColor="Navy" Grid.Column="2" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                            </Label>
+                            <Label Text="{Binding Fps}" TextColor="Navy" Grid.Column="3" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                            </Label>
+                            <Label Text="{Binding Format}" TextColor="Navy" Grid.Column="4" HorizontalTextAlignment="Start" VerticalTextAlignment="Center" FontSize="12">
+                            </Label>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </ContentPage>

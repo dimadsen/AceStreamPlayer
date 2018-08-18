@@ -3,7 +3,7 @@
     <StackLayout>
         <ScrollView>
         <ListView x:Name="matches"  SeparatorVisibility="None" 
-              HasUnevenRows="true" SelectedItem="{Binding SelectedMatch}"
+              HasUnevenRows="true" SelectedItem="{Binding SelectedMatch, Mode=TwoWay}"
               ItemsSource="{Binding Matches}" >
             <ListView.ItemTemplate >
                 <DataTemplate >

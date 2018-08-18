@@ -5,9 +5,9 @@
     <StackLayout>
         <ActivityIndicator Margin="2" WidthRequest="25" HeightRequest="25" IsVisible="{Binding IsBusy}"   IsRunning="{Binding IsBusy}"/>
         <ListView x:Name="championats"  SeparatorVisibility="None" IsPullToRefreshEnabled="true" RefreshCommand="{Binding RefreshCommand}" 
-                  IsRefreshing="{Binding IsRefreshing}"
-              HasUnevenRows="true" SelectedItem="{Binding Path = SelectedChampionat }" SelectionMode=" Single"
-              ItemsSource="{Binding Path=Championats} " >
+                  IsRefreshing="{Binding IsRefreshing}" 
+              HasUnevenRows="true"  SelectedItem="{Binding Path = SelectedChampionat, Mode=TwoWay}"  SelectionMode="Single"  
+              ItemsSource="{Binding Path=Championats }"   >
             <ListView.ItemTemplate>
                 <DataTemplate >
                     <ImageCell   

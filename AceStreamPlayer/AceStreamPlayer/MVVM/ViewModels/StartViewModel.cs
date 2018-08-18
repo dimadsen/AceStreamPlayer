@@ -31,11 +31,11 @@ namespace AceStreamPlayer
 			{
 				if (value != null)
 				{
-					selectedChampionat = value;
+					var championat = value;
+					selectedChampionat = null;
 
-					OnPropertyChanged("selectedChampionat");
-					ShowMatches(selectedChampionat);
-					//selectedChampionat = null;
+					OnPropertyChanged(nameof(SelectedChampionat));
+					ShowMatches(championat);
 				}
 
 			}
