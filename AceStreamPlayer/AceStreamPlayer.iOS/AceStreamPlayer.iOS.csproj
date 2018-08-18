@@ -29,6 +29,7 @@
     <MtouchDebug>true</MtouchDebug>
     <CodesignKey>iPhone Developer</CodesignKey>
     <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+<MtouchSdkVersion>9.3</MtouchSdkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -96,7 +97,6 @@
     <Compile Include="FormsVideoLibrary\VideoPlayerRenderer.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
-    <BundleResource Include="Resources\arsenal.png" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -104,20 +104,6 @@
     <ITunesArtwork Include="iTunesArtwork%402x" />
     <None Include="packages.config" />
     <Compile Include="SQLite.cs" />
-    <BundleResource Include="Resources\porto.png" />
-    <BundleResource Include="Resources\russia.png" />
-    <BundleResource Include="Resources\spain.png" />
-    <BundleResource Include="Resources\ukraine.png" />
-    <BundleResource Include="Resources\dinamo_moscow.png" />
-    <BundleResource Include="Resources\spartak_moscow.png" />
-    <BundleResource Include="Resources\2018_fifa_world_cup.png" />
-    <BundleResource Include="Resources\croatia.png" />
-    <BundleResource Include="Resources\england.png" />
-    <BundleResource Include="Resources\germany.png" />
-    <BundleResource Include="Resources\korea_south-2.png" />
-    <BundleResource Include="Resources\mexico.png" />
-    <BundleResource Include="Resources\poland.png" />
-    <BundleResource Include="Resources\sweden.png" />
     <BundleResource Include="Resources\LaunchImage-568h%402x.png" />
     <BundleResource Include="Resources\LaunchImage-Portrait%402x~ipad.png" />
     <BundleResource Include="Resources\LaunchImage-Portrait~ipad.png" />
@@ -184,7 +170,6 @@
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small%402x.png" />
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40.png" />
-    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Icon-Small-40%402x.png" />
     <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\LaunchImage%402x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />

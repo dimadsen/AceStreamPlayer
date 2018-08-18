@@ -25,13 +25,13 @@ namespace AceStreamPlayer.AdditionalClasses
                 response.EnsureSuccessStatusCode(); // выброс исключения, если произошла ошибка
 
                 var content = await response.Content.ReadAsStringAsync();
-                var json = JObject.Parse(content).SelectToken($"$.{typeof(T).Name}");
+				var json = JObject.Parse(content).SelectToken($"$.response");
 
                 var url = JsonConvert.DeserializeObject<T>(json.ToString());
 
                 return url;
             }
-            catch
+			catch(Exception ex)
             {
                 return default(T);
             }
