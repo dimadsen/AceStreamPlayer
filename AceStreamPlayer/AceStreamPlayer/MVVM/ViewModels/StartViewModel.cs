@@ -55,7 +55,7 @@ namespace AceStreamPlayer
 			set
 			{
 				championats = value;
-				OnPropertyChanged("Championats");
+				OnPropertyChanged(nameof(Championats));
 			}
 		}
 

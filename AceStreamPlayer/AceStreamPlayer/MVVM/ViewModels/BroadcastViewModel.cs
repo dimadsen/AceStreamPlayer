@@ -27,7 +27,23 @@ namespace AceStreamPlayer
             });
 		}
 
-		public ObservableCollection<Reference> References { get; set; }
+		private ObservableCollection<Reference> references { get; set; }
+		public ObservableCollection<Reference> References 
+		{
+			get
+			{
+				if(references == null)
+				{
+					references = App.Sql.GetReferences(_match);
+				}
+				return references;
+			}
+			set
+			{
+				references = value;
+				OnPropertyChanged(nameof(References));
+			}
+		}
 
 		private Reference selectedReference;
 		public Reference SelectedReference
